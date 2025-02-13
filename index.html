@@ -1,0 +1,635 @@
+<!doctypehtml>
+  <html lang=es>
+  <meta charset=UTF-8>
+  <meta content="width=device-width,initial-scale=1" name=viewport>
+  <title>Leal Asesorias & Seguros</title>
+  <link href=./assets/Leal_Branding_Icon_Yellow.ico rel=icon type=image/x-icon>
+  <link href=./assets/Leal_Branding_Icon_Yellow-16x16.png rel=icon sizes=16x16 type=image/png>
+  <link href=./assets/Leal_Branding_Icon_Yellow-32x32.png rel=icon sizes=32x32 type=image/png>
+  <link href=./assets/Leal_Branding_Icon_Yellow-48x48.png rel=icon sizes=48x48 type=image/png>
+  <link href=./assets/Leal_Branding_Icon_Yellow-64x64.png rel=icon sizes=64x64 type=image/png>
+  <link href=./assets/Leal_Branding_Icon_Yellow-192x192.png rel=icon sizes=192x192 type=image/png>
+  <link href=./assets/Leal_Branding_Icon_Yellow-512x512.png rel=icon sizes=512x512 type=image/png>
+  <link href=./assets/Leal_Branding_Icon_Yellow-apple.png rel=apple-touch-icon sizes=180x180>
+  <link href=./assets/Leal_Branding_Icon_Yellow-192x192.png rel=icon sizes=192x192 type=image/png>
+  <meta content=#ffffff name=msapplication-TileColor>
+  <meta content=./assets/Leal_Branding_Icon_Yellow-144x144.png name=msapplication-TileImage>
+  <link href=./assets/Leal_Branding_Icon_Yellow.svg rel=mask-icon color=#226CA5>
+  <meta content=#ffffff name=theme-color>
+  <link href=./css/styles.css rel=stylesheet>
+  <link href=./css/change-colo.css rel=stylesheet>
+  <link href=./css/section-about.css rel=stylesheet>
+  <link href=./css/testimonion.css rel=stylesheet>
+  <link href=./css/footer.css rel=stylesheet>
+  <link href=./css/button-whap.css rel=stylesheet>
+  <link href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css rel=stylesheet>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel=stylesheet>
+  <style>
+    html {
+      scroll-behavior: smooth
+    }
+
+    .box-emails {
+      display: flex;
+      flex-direction: column;
+      gap: 10px
+    }
+
+    div[style*="display: flex"] {
+      cursor: pointer;
+      transition: all .3s ease-in-out
+    }
+
+    div[style*="display: flex"]:hover {
+      box-shadow: 5px 5px 15px #0d1117, -5px -5px 15px #282e41;
+      transform: scale(1.05)
+    }
+
+    .slide {
+      position: relative;
+      overflow: hidden
+    }
+
+    .video-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1
+    }
+
+    .background-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: .9
+    }
+
+    .slide-content {
+      position: relative;
+      z-index: 2;
+      color: #fff;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, .5)
+    }
+
+    .first-slide-video .background-video {
+      object-position: center 30%
+    }
+
+    @media (max-width:768px) {
+      .first-slide-video .background-video {
+        object-position: center 25%
+      }
+
+      .background-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: .9
+      }
+    }
+
+    @media (max-width:768px) {
+      .background-video {
+        object-position: 60% center
+      }
+
+      .slide-content {
+        padding: 20px
+      }
+    }
+
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, .5);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000
+    }
+
+    .modal {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, .2);
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+      position: relative
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center
+    }
+
+    .modal-header h3 {
+      margin: 0;
+      font-size: 1.5rem
+    }
+
+    .close-modal {
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: red;
+      transition: all .3s ease
+    }
+
+    .close-modal:hover {
+      color: #8b0000
+    }
+
+    #testimonialForm {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 15px
+    }
+
+    #testimonialForm input,
+    #testimonialForm textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem
+    }
+
+    .submit-btn {
+      padding: 10px;
+      background: #e2c96e;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: all .3s ease
+    }
+
+    .submit-btn:hover {
+      background: #e2c950
+    }
+
+    .success-message {
+      display: none;
+      color: green;
+      font-size: 1rem;
+      margin-top: 10px
+    }
+
+    .delete-testimonials-btn {
+      margin-top: 15px;
+      padding: 10px;
+      background: red;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all .3s ease
+    }
+
+    .delete-testimonials-btn i {
+      font-size: 1.2rem
+    }
+
+    .delete-testimonials-btn:hover {
+      background: #8b0000
+    }
+
+    .open-modal-btn {
+      padding: 10px 20px;
+      background: #e2c96e;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: all .3s ease;
+      margin-bottom: 20px
+    }
+
+    .open-modal-btn:hover {
+      background: #e2c950
+    }
+  </style>
+  <style>
+    .success-alert {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #4caf50;
+      color: #fff;
+      padding: 15px 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, .2);
+      font-size: 1rem;
+      display: none;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all .5s ease-in-out
+    }
+
+    .success-alert.show {
+      display: block;
+      opacity: 1;
+      transform: translateY(0)
+    }
+  </style>
+  <nav>
+    <div class=logo><img alt="Leal Seguros Logo" src="./assets/Leal_Branding White.png" class=logo-img></div>
+    <div class=menu-toggle onclick=toggleMenu()><span></span> <span></span> <span></span></div>
+    <div class=nav-links><a href=#about onclick=closeMenu()>Acerca</a> <a href=#services
+        onclick=closeMenu()>Servicios</a> <a href=#reviews onclick=closeMenu()>Testimonios</a> <a href=#quehacemos
+        onclick=closeMenu()>¿Qué hacemos?</a> <a href=#contacts onclick=closeMenu()>Contacto</a>
+      <div class=social-icons><a href=./muypronto.html target=_blank><i class="fa-brands fa-facebook"></i></a> <a
+          href=https://www.instagram.com/leal_asesoriasyseguros/ target=_blank><i
+            class="fa-brands fa-instagram"></i></a> <a href=./muypronto.html target=_blank><i
+            class="fa-brands fa-twitter"></i></a></div>
+    </div>
+  </nav>
+  <div class=slider-dots>
+    <div class="dot active" data-slide=0></div>
+    <div class=dot data-slide=1></div>
+    <div class=dot data-slide=2></div>
+  </div>
+  <div class=slider-container>
+    <div class=slider>
+      <div class="dark-slide slide" style="background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(assets/imagen2.jpeg);background-size:cover;background-position:center;background-repeat:no-repeat">
+        <div class="first-slide-video video-container"></div>
+        <div class=slide-content>
+          <div class=slide-number>01 / 03</div>
+          <h1>Leal Asesorias & Seguros LTDA</h1>
+          <p>Bienvenidos a Leal Asesorías & Seguros LTDA. Ofrecemos soluciones integrales de seguros y servicios de
+            asesoría diseñados para satisfacer sus necesidades específicas, garantizando la tranquilidad de cada persona
+            y empresa.
+        </div>
+      </div>
+      <div class="dark-slide slide"
+        style="background-image:url(./assets/Second-imge.jpg);background-size:cover;background-position:0 30%"></div>
+      <div class="dark-slide slide background-image-slide"
+        style="background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(assets/Imagen3.jpeg);background-size:cover;background-position:center;background-repeat:no-repeat">
+        <div class=slide-number>03 / 03</div>
+        <h1>Gestión Integral de Seguridad y Salud en el Trabajo</h1>
+        <p>Protegemos tu empresa y a tus trabajadores con soluciones integrales en seguridad y salud en el trabajo.
+          Cumple la normativa, reduce riesgos y mejora la productividad con nuestros expertos.</p><button class=btn>GET
+          STARTED</button>
+      </div>
+    </div>
+  </div>
+  <section class=about-section id=about>
+    <h2 class=about-heading>Acerca</h2>
+    <p class=about-description id=services>En Leal Asesorías & Seguros LTDA, nos especializamos en brindar servicios de
+      asesoría y seguros personalizados. Nuestro equipo dedicado está enfocado en comprender sus necesidades y brindar
+      soluciones que protejan sus activos y su futuro. Experimente nuestro compromiso con la excelencia y la
+      satisfacción del cliente en Leal Asesorías & Seguros LTDA.
+    <div class=services-grid>
+      <div class=service-card>
+        <h3 class=service-title>Consulta de seguros</h3>
+        <p class=service-description>Aprovechando nuestro amplio conocimiento de la industria, realizamos consultas
+          detalladas para identificar sus necesidades de seguro, garantizando que reciba las mejores opciones de
+          cobertura adaptadas a su estilo de vida o requisitos comerciales.</p><a href=#contacts
+          class=contact-link>Contacto</a>
+      </div>
+      <div class="service-card middle">
+        <h3 class=service-title>Orientación experta</h3>
+        <p class=service-description>Nuestros asesores expertos brindan asistencia personalizada durante todo el proceso
+          de seguro, desde la consulta inicial hasta la asistencia con reclamos, lo que garantiza una experiencia fluida
+          y sin estrés.</p><a href=#contacts class=contact-link>Contacto</a>
+      </div>
+      <div class=service-card>
+        <h3 class=service-title>Evaluación de riesgos</h3>
+        <p class=service-description>En Leal Asesorías & Seguros LTDA, ofrecemos servicios integrales de evaluación de
+          riesgos, brindando evaluaciones precisas para ayudarlo a tomar decisiones informadas sobre sus inversiones en
+          seguros. Confíe en nosotros para proteger su futuro con confianza.</p><a href=#contacts
+          class=contact-link>Contacto</a>
+      </div>
+    </div>
+  </section>
+  <section class=testimonials-section>
+    <h2 class=section-title id=reviews>Testimonios</h2>
+    <div class=testimonials-container><button class="nav-button prev"><i class="fas fa-chevron-left"></i></button>
+      <div class=testimonials-track>
+        <div class=testimonial-card>
+          <div class=avatar>
+          </div>
+          <div class=testimonial-content>
+            <h3 class=testimonial-name>John Champion</h3>
+            <p class=testimonial-text>Working with Leal Asesorias & Seguros LTDA was a remarkable experience. Their team
+              provided invaluable guidance and helped me select a fantastic policy.
+            </p>
+          </div>
+        </div>
+        <div class="testimonial-card active">
+          <div class=avatar>
+          </div>
+          <div class=testimonial-content>
+            <h3 class=testimonial-name>Clara Markes</h3>
+            <p class=testimonial-text>Leal Asesorias & Seguros LTDA's interactive consultations were instrumental in
+              enhancing my understanding of insurance.
+            </p>
+          </div>
+        </div>
+        <div class=testimonial-card>
+          <div class=avatar>
+          </div>
+          <div class=testimonial-content>
+            <h3 class=testimonial-name>Mark Jackson</h3>
+            <p class=testimonial-text>Leal Asesorias & Seguros LTDA transformed my approach to insurance! Their team was
+              incredibly knowledgeable.
+            </p>
+          </div>
+        </div>
+      </div><button class="nav-button next"><i class="fas fa-chevron-right"></i></button>
+    </div><button class="floating-btn open-modal-btn"><i class="fa-solid fa-plus"></i>Testimonio</button>
+  </section>
+  <div class=modal-overlay>
+    <div class=modal>
+      <div class=modal-header>
+        <h3>Agregar Testimonio</h3><i class="fa-solid close-modal fa-times"></i>
+      </div>
+      <form id=testimonialForm><input id=testimonialName placeholder="Tu nombre" required> <textarea id=testimonialText
+          placeholder="Escribe tu testimonio" required></textarea> <button class=submit-btn type=submit>Enviar</button>
+      </form>
+      <p class=success-message>✔ ¡Testimonio agregado con éxito!</p><button class=delete-testimonials-btn><i
+          class="fa-solid fa-trash"></i></button>
+    </div>
+  </div>
+
+    <!-- Sección de Servicios -->
+<section class="services-section" style="padding: 80px 20px; background: #f9f9f9;">
+  <div class="section-content" style="max-width: 1200px; margin: 0 auto;">
+    <h2 class="section-title" style="text-align: center; margin-bottom: 60px; color: #2c3e50; font-size: 2.5em; position: relative;">
+      Nuestros Valores y Servicios
+      <div style="width: 60px; height: 3px; background: #e2c96e; margin: 15px auto 0;"></div>
+    </h2>
+
+    <!-- Valores -->
+    <div class="values-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-bottom: 80px;">
+      <div class="value-card" style="background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 25px rgba(0,0,0,0.08); transition: all 0.3s ease;">
+        <h3 style="color: #e2c96e; margin-bottom: 15px; font-size: 1.3em;">Lealtad + Ética</h3>
+        <p style="color: #555; line-height: 1.6;">Compromiso con principios y relaciones transparentes.</p>
+      </div>
+      <div class="value-card" style="background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 25px rgba(0,0,0,0.08); transition: all 0.3s ease;">
+        <h3 style="color: #e2c96e; margin-bottom: 15px; font-size: 1.3em;">Calidad + Integridad</h3>
+        <p style="color: #555; line-height: 1.6;">Resultados impecables y comunicación honesta.</p>
+      </div>
+      <div class="value-card" style="background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 25px rgba(0,0,0,0.08); transition: all 0.3s ease;">
+        <h3 style="color: #e2c96e; margin-bottom: 15px; font-size: 1.3em;">Liderazgo + Compromiso</h3>
+        <p style="color: #555; line-height: 1.6;">Orientación profesional para cumplir objetivos estratégicos.</p>
+      </div>
+      <div class="value-card" style="background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 25px rgba(0,0,0,0.08); transition: all 0.3s ease;">
+        <h3 style="color: #e2c96e; margin-bottom: 15px; font-size: 1.3em;">Honestidad + Responsabilidad</h3>
+        <p style="color: #555; line-height: 1.6;">Decisiones seguras y cumplimiento de metas.</p>
+      </div>
+      <div class="value-card" style="background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 25px rgba(0,0,0,0.08); transition: all 0.3s ease;">
+        <h3 style="color: #e2c96e; margin-bottom: 15px; font-size: 1.3em;">Innovación + Creatividad</h3>
+        <p style="color: #555; line-height: 1.6;">Soluciones vanguardistas para el crecimiento empresarial.</p>
+      </div>
+      <div class="value-card" style="background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 25px rgba(0,0,0,0.08); transition: all 0.3s ease;">
+        <h3 style="color: #e2c96e; margin-bottom: 15px; font-size: 1.3em;">Innovación + Creatividad</h3>
+        <p style="color: #555; line-height: 1.6;">Soluciones vanguardistas para el crecimiento empresarial.</p>
+      </div>
+    </div>
+
+    <!-- Servicios -->
+    <div class="services-container" style="background: white; padding: 50px; border-radius: 15px; box-shadow: 0 5px 25px rgba(0,0,0,0.08);">
+      <div class="service-category" style="margin-bottom: 50px;">
+        <div class="service-header" style="gap: 15px; margin-bottom: 30px;"">
+          <div style="width: 40px; height: 40px; background-image: url(./assets/image.png); border-radius: 8px;"></div>
+          <h3 style="color: #2c3e50; font-size: 1.8em;">Sistemas Integrados de Gestión</h3>
+        </div>
+        <ul style="list-style: none; padding-left: 0;">
+          <li style="padding: 15px 0; border-bottom: 1px solid #eee; display: flex; align-items: center; gap: 10px;">
+            <div style="width: 8px; height: 8px; background: #e2c96e; border-radius: 50%;"></div>
+            Diseño e implementación bajo normas internacionales (ISO 9001, ISO 14001, ISO 45001)
+          </li>
+          <li style="padding: 15px 0; border-bottom: 1px solid #eee; display: flex; align-items: center; gap: 10px;">
+            <div style="width: 8px; height: 8px; background: #e2c96e; border-radius: 50%;"></div>
+            Administración y actualización continua de documentos e indicadores
+          </li>
+          <li style="padding: 15px 0; display: flex; align-items: center; gap: 10px;">
+            <div style="width: 8px; height: 8px; background: #e2c96e; border-radius: 50%;"></div>
+            Auditorías internas/externas y apoyo en certificaciones
+          </li>
+          <li style="padding: 15px 0; display: flex; align-items: center; gap: 10px;">
+            <div style="width: 8px; height: 8px; background: #e2c96e; border-radius: 50%;"></div>
+            Auditorías internas/externas y apoyo en certificaciones
+          </li>
+          <li style="padding: 15px 0; display: flex; align-items: center; gap: 10px;">
+            <div style="width: 8px; height: 8px; background: #e2c96e; border-radius: 50%;"></div>
+            Auditorías internas/externas y apoyo en certificaciones
+          </li>
+          <li style="padding: 15px 0; display: flex; align-items: center; gap: 10px;">
+            <div style="width: 8px; height: 8px; background: #e2c96e; border-radius: 50%;"></div>
+            Auditorías internas/externas y apoyo en certificaciones
+          </li>
+        </ul>
+      </div>
+
+      <!-- Repetir misma estructura para los demás servicios -->
+      <!-- ... -->
+
+    </div>
+  </div>
+</section>
+
+  <div class=contact-section>
+    <h2 class=contact-title style=color:#fff>Contáctanos</h2>
+    <div class=contact-grid>
+      <div class=contact-item>
+        <div class=contact-icon><svg fill="rgb(226, 201, 110)" height=200 viewBox="0 0 32 32" width=200
+            xmlns=http://www.w3.org/2000/svg>
+            <path
+              d="M21.333 3.778H9.926a.815.815 0 00-.815.815v22.815c0 .45.365.815.815.815h11.407c.45 0 .815-.365.815-.815V4.593a.815.815 0 00-.815-.815zm0-2.445c1.8 0 3.259 1.459 3.259 3.259v22.815c0 1.8-1.459 3.259-3.259 3.259H9.926a3.259 3.259 0 01-3.259-3.259V4.592c0-1.8 1.459-3.259 3.259-3.259h11.407zM15.63 24.148a1.63 1.63 0 110 3.26 1.63 1.63 0 010-3.26zm2.037-19.555a.407.407 0 110 .814h-4.074a.407.407 0 110-.814h4.074z">
+            </path>
+          </svg></div>
+        <h3 id=contacts>Contacto</h3>
+        <div class=box-emails>
+          <div
+            style="display:flex;align-items:center;gap:12px;background:#1a1f2e;padding:15px;border-radius:12px;box-shadow:inset 3px 3px 6px #141823,inset -3px -3px 6px #222836;transition:all .3s ease-in-out;cursor:pointer">
+            <i class="fas fa-envelope" style=color:#ff9800;font-size:1.3rem></i> <a href="mailto:contabilidad@lealays.com"
+              style="text-decoration:none;color:#fff;font-weight:700">contabilidad@lealays.com</a></div>
+          <div
+            style="display:flex;align-items:center;gap:12px;background:#1a1f2e;padding:15px;border-radius:12px;box-shadow:inset 3px 3px 6px #141823,inset -3px -3px 6px #222836;transition:all .3s ease-in-out;cursor:pointer">
+            <i class="fas fa-envelope" style=color:#4caf50;font-size:1.3rem></i> <a href="mailto:gerencia@lealays.com"
+              style="text-decoration:none;color:#fff;font-weight:700">gerencia@lealays.com</a></div>
+          <div
+            style="display:flex;align-items:center;gap:12px;background:#1a1f2e;padding:15px;border-radius:12px;box-shadow:inset 3px 3px 6px #141823,inset -3px -3px 6px #222836;transition:all .3s ease-in-out;cursor:pointer">
+            <i class="fas fa-envelope" style=color:#2196f3;font-size:1.3rem></i> <a href=mailto:comercial@lealays.com
+              style=text-decoration:none;color:#fff;font-weight:700>comercial@lealays.com</a></div>
+          <div
+            style="display:flex;align-items:center;gap:12px;background:#1a1f2e;padding:15px;border-radius:12px;box-shadow:inset 3px 3px 6px #141823,inset -3px -3px 6px #222836;transition:all .3s ease-in-out;cursor:pointer">
+            <i class="fas fa-envelope" style=color:#e91e63;font-size:1.3rem></i> <a
+              href=mailto:agendamientos@lealays.com
+              style=text-decoration:none;color:#fff;font-weight:700>agendamientos@lealays.com</a></div>
+          <div
+            style="display:flex;align-items:center;gap:12px;background:#1a1f2e;padding:15px;border-radius:12px;box-shadow:inset 3px 3px 6px #141823,inset -3px -3px 6px #222836;transition:all .3s ease-in-out;cursor:pointer">
+            <i class="fas fa-envelope" style=color:#9c27b0;font-size:1.3rem></i> <a href=mailto:hseq@lealays.com
+              style=text-decoration:none;color:#fff;font-weight:700>hseq@lealays.com</a></div>
+          <div
+            style="display:flex;align-items:center;gap:12px;background:#1a1f2e;padding:15px;border-radius:12px;box-shadow:inset 3px 3px 6px #141823,inset -3px -3px 6px #222836;transition:all .3s ease-in-out;cursor:pointer">
+            <i class="fas fa-phone-alt" style=color:#ff5722;font-size:1.3rem></i> <a href=tel:+573012852588
+              style=text-decoration:none;color:#fff;font-weight:700>+57 301 2852588</a></div>
+        </div>
+      </div>
+      <div class=contact-item>
+        <div class=contact-icon>
+          <div class="kchUpy llCXlQ sc-1mehu68-0 sc-241bld-10" data-name=icon-locationpin-complexity-3><svg
+              fill="rgb(226, 201, 110)" height=60 viewBox="0 0 32 32" width=60 xmlns=http://www.w3.org/2000/svg>
+              <path
+                d="M20.348 20.277a1.055 1.055 0 00-1.148.975v.01a1.055 1.055 0 00.975 1.148h.01c6.806.579 9.681 2.519 9.681 3.2 0 .955-4.714 3.2-13.867 3.2s-13.867-2.245-13.867-3.2c0-.681 2.875-2.621 9.681-3.2a1.07 1.07 0 00.985-1.148v-.01a1.07 1.07 0 00-1.148-.985h-.01C6.266 20.734-.002 22.41-.002 25.61c0 3.667 8.3 5.333 16 5.333s16-1.666 16-5.333c0-3.2-6.268-4.876-11.652-5.333z">
+              </path>
+              <path d="M14.933 13.775V25.6a1.067 1.067 0 102.134 0V13.775a6.398 6.398 0 10-2.133 0z"></path>
+            </svg></div>
+        </div>
+        <h3>Ubicación</h3>
+        <div
+          style="display:flex;flex-direction:column;align-items:center;justify-content:center;background:#1a1f2e;padding:15px 20px;border-radius:10px;box-shadow:inset 3px 3px 6px #141823,inset -3px -3px 6px #222836;transition:all .3s ease-in-out;color:#fff;font-size:1.1rem;text-align:center;width:fit-content;margin:20px auto;cursor:pointer">
+          <p style="margin:5px 0;display:flex;align-items:center;gap:8px;transition:all .3s ease-in-out"><i
+              class="fa-solid fa-location-dot" style=color:#fc0;font-size:1.3rem></i> <span>Barranquilla,
+              Atlántico</span>
+          <p style="margin:5px 0;display:flex;align-items:center;gap:8px;transition:all .3s ease-in-out"><i
+              class="fa-solid fa-globe" style=color:#0cf;font-size:1.3rem></i> <span>Colombia</span>
+        </div>
+      </div>
+      <div class=contact-item>
+        <div class=contact-icon><i class="fa-clock far"></i></div>
+        <h3>Working hours</h3>
+        <div class=box-hours>
+          <div
+            style="display:flex;align-items:center;gap:12px;background:#1a1f2e;padding:15px;border-radius:12px;box-shadow:inset 3px 3px 6px #141823,inset -3px -3px 6px #222836;transition:all .3s ease-in-out;cursor:pointer">
+            <i class="fas fa-door-open" style=color:#4caf50;font-size:1.3rem></i>
+            <p style=margin:0;color:#fff;font-weight:700>Open: 12:00 PM
+          </div>
+          <div
+            style="display:flex;align-items:center;gap:15px;background:#1a1f2e;padding:15px;border-radius:12px;box-shadow:inset 3px 3px 6px #141823,inset -3px -3px 6px #222836;transition:all .3s ease-in-out;cursor:pointer">
+            <i class="fas fa-door-closed" style=color:#ff5722;font-size:1.3rem></i>
+            <p style=margin:0;color:#fff;font-weight:700>Closed: 10:00 PM
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class=updates-section>
+      <h2 class=updates-title style=color:#fff>📢 Recibe nuestras últimas actualizaciones</h2>
+      <form id=subscriptionForm class=subscription-form><input id=emailInput placeholder="Enter your email" required
+          class=email-input type=email> <button class=subscribe-button type=submit>Subscribe</button>
+        <div class=error-message id=errorMessage style=color:red;display:none>⚠ Por favor ingrese un correo válido.
+        </div>
+      </form>
+    </div>
+    <div class=success-alert id=successAlert>✅ ¡Te has suscrito con éxito!</div>
+    <div class=social-links><a href=./muypronto.html class=social-link target=_blank><i
+          class="fab fa-facebook-f"></i></a> <a href=./muypronto.html class=social-link target=_blank><i
+          class="fab fa-twitter"></i></a> <a href=./muypronto.html class=social-link target=_blank><i
+          class="fab fa-linkedin-in"></i></a> <a href=https://www.instagram.com/leal_asesoriasyseguros/
+        class=social-link target=_blank><i class="fab fa-instagram"></i></a></div>
+    <p class=copyright>© All Rights Reserved. Leal Asesorias & Seguros LTDA</p><a
+      href="https://wa.me/573012852588?text=Hola,%20estoy%20interesado%20en%20sus%20servicios%20de%20seguros"
+      class=whatsapp-bot target=_blank aria-label="Contactar por WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <div class=chat-icon id=chatIcon onclick=startChat()><img alt=Chatbot src=./assets/icons8-robot-mensaje-48.png>
+    </div>
+    <div class=chat-container id=chatBot>
+      <div class=chat-header onclick=toggleChat()><i class="fab fa-whatsapp"></i> <span>Asistente Virtual</span></div>
+      <div class=chat-messages id=chatMessages></div>
+      <div class=chat-options id=chatOptions></div><button class=update-chat-btn onclick=updateChat()>Actualizar
+        Chat</button>
+    </div>
+    <script src=./js/main.js></script>
+    <script src=./js/testimonials.js></script>
+    <script src=./js/contact.js></script>
+    <script src=./js/chatbot.js></script>
+    <script src=./js/menu-hamburguersa.js></script>
+    <script src=./js/sectiom-testimonial.js></script>
+    <script>document.addEventListener("DOMContentLoaded", function () {
+        const nav = document.querySelector("nav");
+        const navLinks = document.querySelectorAll(".nav-links a");
+        const logo = document.querySelector(".logo");
+        const slides = document.querySelectorAll(".slide");
+
+        // Función para determinar el contraste
+        function needsLightText(bgColor) {
+          const color = bgColor.replace(/^#/, "");
+          const r = parseInt(color.substr(0, 2), 16);
+          const g = parseInt(color.substr(2, 2), 16);
+          const b = parseInt(color.substr(4, 2), 16);
+          const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+          return brightness < 128;
+        }
+
+        function updateNavColors() {
+          if (nav.classList.contains("scrolled")) {
+            // Estado scrolled - siempre texto oscuro
+            nav.classList.remove("light-nav", "dark-nav");
+            navLinks.forEach((link) => (link.style.color = "#333"));
+            logo.style.color = "#333";
+            return;
+          }
+
+          const currentSlide = document.querySelector(".slide.active");
+          if (!currentSlide) return;
+
+          const style = window.getComputedStyle(currentSlide);
+          const bgColor = style.backgroundColor;
+
+          if (needsLightText(rgbToHex(bgColor))) {
+            // Fondo oscuro - texto claro
+            nav.classList.add("dark-nav");
+            nav.classList.remove("light-nav");
+          } else {
+            // Fondo claro - texto oscuro
+            nav.classList.add("light-nav");
+            nav.classList.remove("dark-nav");
+          }
+        }
+
+        // Conversor RGB a HEX
+        function rgbToHex(rgb) {
+          const sep = rgb.indexOf(",") > -1 ? "," : " ";
+          const parts = rgb.substr(4).split(")")[0].split(sep);
+          let r = (+parts[0]).toString(16),
+            g = (+parts[1]).toString(16),
+            b = (+parts[2]).toString(16);
+
+          if (r.length == 1) r = "0" + r;
+          if (g.length == 1) g = "0" + g;
+          if (b.length == 1) b = "0" + b;
+
+          return "#" + r + g + b;
+        }
+
+        // Observador de intersección
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                slides.forEach((slide) => slide.classList.remove("active"));
+                entry.target.classList.add("active");
+                updateNavColors();
+              }
+            });
+          },
+          { threshold: 0.5 }
+        );
+
+        slides.forEach((slide) => observer.observe(slide));
+
+        // Evento de scroll
+        window.addEventListener("scroll", () => {
+          nav.classList.toggle("scrolled", window.scrollY > 50);
+          updateNavColors();
+        });
+
+        // Inicialización
+        updateNavColors();
+      });</script>
