@@ -1,2 +1,47 @@
-document.getElementById('subscriptionForm').addEventListener('submit',function(e){e.preventDefault();const emailInput=this.querySelector('input[type="email"]');const errorMessage=this.querySelector('.error-message');if(!emailInput.value.trim()){errorMessage.style.display='block';emailInput.focus()}else{errorMessage.style.display='none';console.log('Subscription email:',emailInput.value);emailInput.value='';alert('Thank you for subscribing!')}});document.addEventListener("DOMContentLoaded",function(){const subscriptionForm=document.getElementById("subscriptionForm");const emailInput=document.getElementById("emailInput");const errorMessage=document.getElementById("errorMessage");const successMessage=document.getElementById("successMessage");subscriptionForm.addEventListener("submit",function(event){event.preventDefault();const emailValue=emailInput.value.trim();const emailRegex=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;if(!emailRegex.test(emailValue)){errorMessage.style.display="block";successMessage.style.display="none";return}
-localStorage.setItem("subscribedEmail",emailValue);errorMessage.style.display="none";successMessage.style.display="block";setTimeout(()=>{successMessage.style.display="none";emailInput.value=""},2000)})})
+// Inicializar EmailJS con tu Public Key
+(function() {
+  emailjs.init("hZfzYD1vq1d1tQa3L"); // Reemplázalo con tu Public Key de EmailJS
+})();
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById('subscriptionForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const email = document.getElementById('emailInput').value.trim();
+      const errorMessage = document.getElementById('errorMessage');
+
+      // Validación de email
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          errorMessage.style.display = 'block';
+          return;
+      }
+      errorMessage.style.display = 'none';
+
+      // Función para extraer el primer nombre del correo
+      function obtenerPrimerNombre(correo) {
+          let nombre = correo.split('@')[0]; // Tomamos solo la parte antes del '@'
+          nombre = nombre.replace(/\d+/g, ''); // Eliminamos números si los tiene
+          nombre = nombre.split(/[._]/)[0]; // Si hay puntos o guiones bajos, tomamos la primera parte
+          return nombre.charAt(0).toUpperCase() + nombre.slice(1); // Capitalizamos la primera letra
+      }
+
+      const primerNombre = obtenerPrimerNombre(email);
+
+      // Configurar parámetros para EmailJS
+      const templateParams = {
+          to_email: email,  // Enviar al correo del usuario
+          nombre_usuario: primerNombre, // Nombre dinámico
+          subject: "¡Gracias por suscribirte a Leal Asesorías! 🎉"
+      };
+
+      // Enviar email usando EmailJS
+      emailjs.send("service_dy1n83b", "template_mduyejd", templateParams) 
+          .then(function(response) {
+              alert(`✅ Gracias por suscribirte, ${primerNombre}! Hemos enviado un correo a ${email}.`);
+              document.getElementById('emailInput').value = ''; // Limpiar input
+          }, function(error) {
+              console.error("Error al enviar:", error);
+              alert("⚠ Ocurrió un error. Por favor intenta nuevamente.");
+          });
+  });
+});

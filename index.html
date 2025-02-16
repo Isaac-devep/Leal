@@ -1,766 +1,662 @@
-<!doctypehtml>
-  <html lang=es>
-  <meta charset=UTF-8>
-  <meta content="width=device-width,initial-scale=1" name=viewport>
-  <title>Leal Asesorias & Seguros</title>
-  <link href=./assets/Leal_Branding_Icon_Yellow.ico rel=icon type=image/x-icon>
-  <link href=./assets/Leal_Branding_Icon_Yellow-16x16.png rel=icon sizes=16x16 type=image/png>
-  <link href=./assets/Leal_Branding_Icon_Yellow-32x32.png rel=icon sizes=32x32 type=image/png>
-  <link href=./assets/Leal_Branding_Icon_Yellow-48x48.png rel=icon sizes=48x48 type=image/png>
-  <link href=./assets/Leal_Branding_Icon_Yellow-64x64.png rel=icon sizes=64x64 type=image/png>
-  <link href=./assets/Leal_Branding_Icon_Yellow-192x192.png rel=icon sizes=192x192 type=image/png>
-  <link href=./assets/Leal_Branding_Icon_Yellow-512x512.png rel=icon sizes=512x512 type=image/png>
-  <link href=./assets/Leal_Branding_Icon_Yellow-apple.png rel=apple-touch-icon sizes=180x180>
-  <link href=./assets/Leal_Branding_Icon_Yellow-192x192.png rel=icon sizes=192x192 type=image/png>
-  <meta content=#ffffff name=msapplication-TileColor>
-  <meta content=./assets/Leal_Branding_Icon_Yellow-144x144.png name=msapplication-TileImage>
-  <link href=./assets/Leal_Branding_Icon_Yellow.svg rel=mask-icon color=#226CA5>
-  <meta content=#ffffff name=theme-color>
-  <link href=./css/styles.css rel=stylesheet>
-  <link href=./css/change-colo.css rel=stylesheet>
-  <link href=./css/section-about.css rel=stylesheet>
-  <link href=./css/footer.css rel=stylesheet>
-  <link href=./css/button-whap.css rel=stylesheet>
-  <link href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css rel=stylesheet>
-  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel=stylesheet>
+<!doctype html>
+<html lang=es>
 
-  <body>
-    <style>
+<head>
+   <meta charset=UTF-8>
+   <meta content="width=device-width,initial-scale=1" name=viewport>
+   <title>Leal Asesorías & Seguros | Expertos en Protección y Gestión de Riesgos</title>
+   <!-- 🔹 Meta Descripción para SEO -->
+   <meta name="description"
+      content="Leal Asesorías & Seguros LTDA: Expertos en gestión de riesgos, seguros empresariales y seguridad laboral en Barranquilla. Consultoría ISO, implementación SG-SST y planes de seguridad vial.">
+   <!-- 🔹 Meta Keywords -->
+   <meta name="keywords"
+      content="seguros empresariales Barranquilla, consultoría ISO 9001, sistema gestión seguridad trabajo, ARL, implementación SG-SST, planes seguridad vial, gestión riesgos laborales">
+
+   <!-- 🔹 Open Graph (Para compartir en redes sociales) -->
+   <meta property="og:title" content="Leal Asesorías & Seguros LTDA">
+   <meta property="og:description"
+      content="Expertos en asesoría y protección para empresas y personas. Conoce nuestros servicios de seguros y gestión de riesgos.">
+   <meta property="og:image" content="https://lealasesorias.com/assets/logo-og.png">
+   <meta property="og:url" content="https://lealasesorias.com">
+   <meta property="og:type" content="website">
+
+   <!-- 🔹 Twitter Cards -->
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:title" content="Leal Asesorías & Seguros">
+   <meta name="twitter:description"
+      content="Protegemos a empresas y personas con seguros y asesoría especializada. Conoce más.">
+   <meta name="twitter:image" content="https://lealasesorias.com/assets/logo-twitter.png">
+
+   <!-- 🔹 Iconos -->
+   <link rel="icon" type="image/png" sizes="32x32" href="./assets/Leal_Branding_Icon_Yellow-32x32.png">
+   <link rel="apple-touch-icon" sizes="180x180" href="./assets/Leal_Branding_Icon_Yellow-apple.png">
+   <meta name="theme-color" content="#ffffff">
+
+   <!-- 🔹 Estilos CSS -->
+   <link rel="stylesheet" href="./css/styles.css">
+   <link rel="stylesheet" href="./css/change-colo.css">
+   <link rel="stylesheet" href="./css/section-about.css">
+   <link rel="stylesheet" href="./css/footer.css">
+   <link rel="stylesheet" href="./css/button-whap.css">
+
+   <!-- 🔹 Fuentes y Librerías -->
+   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" as="style">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" async>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" async>
+
+
+   <!-- 🔹 Scripts con "defer" para optimización -->
+   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
+   <style>
       html {
-        scroll-behavior: smooth
+         scroll-behavior: smooth;
       }
 
-      .box-emails {
-        display: flex;
-        flex-direction: column;
-        gap: 10px
+      .arrow-pointer {
+         position: fixed;
+         z-index: 10000;
+         font-size: 40px;
+         color: #e2c96e;
+         filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
+         pointer-events: none;
+         transition: all 1.5s ease-in-out;
       }
 
-      div[style*="display: flex"] {
-        cursor: pointer;
-        transition: all .3s ease-in-out
-      }
+      /* Animación de rebote al llegar */
+      @keyframes bounce {
 
-      div[style*="display: flex"]:hover {
-        box-shadow: 5px 5px 15px #0d1117, -5px -5px 15px #282e41;
-        transform: scale(1.05)
-      }
+         0%,
+         100% {
+            transform: translateY(0);
+         }
 
-      .slide {
-        position: relative;
-        overflow: hidden
+         50% {
+            transform: translateY(-10px);
+         }
       }
+   </style>
+   <script type="application/ld+json">
+   {
+     "@context": "https://schema.org",
+     "@type": "InsuranceAgency",
+     "name": "Leal Asesorías & Seguros LTDA",
+     "image": [
+       "https://lealasesorias.com/assets/logo-og.png",
+       "https://lealasesorias.com/assets/office-photo.jpg"
+     ],
+     "@id": "https://lealasesorias.com",
+     "url": "https://lealasesorias.com",
+     "telephone": "+573012852588",
+     "priceRange": "$$", 
+     "serviceArea": {
+       "@type": "AdministrativeArea",
+       "name": "Atlántico, Bolívar, Magdalena"
+     },
+     "address": {
+       "@type": "PostalAddress",
+       "streetAddress": "Calle 84 #45-203", // Si tienes dirección física
+       "addressLocality": "Barranquilla",
+       "addressRegion": "Atlántico",
+       "postalCode": "080001",
+       "addressCountry": "CO"
+     },
+     "geo": {
+       "@type": "GeoCoordinates",
+       "latitude": 10.963889,
+       "longitude": -74.796387
+     },
+     "openingHoursSpecification": {
+       "@type": "OpeningHoursSpecification",
+       "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+       "opens": "08:00",
+       "closes": "18:00"
+     },
+     "sameAs": [
+       "https://www.instagram.com/leal_asesoriasyseguros/"
+     ]
+   }
+   </script>
+</head>
 
-      .video-container {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1
-      }
-
-      .background-video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        opacity: .9
-      }
-
-      .slide-content {
-        position: relative;
-        z-index: 2;
-        color: #fff;
-        text-shadow: 1px 1px 3px rgba(0, 0, 0, .5)
-      }
-
-      .first-slide-video .background-video {
-        object-position: center 30%
-      }
-
-      @media (max-width:768px) {
-        .first-slide-video .background-video {
-          object-position: center 25%
-        }
-
-        .background-video {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          opacity: .9
-        }
-      }
-
-      @media (max-width:768px) {
-        .background-video {
-          object-position: 60% center
-        }
-
-        .slide-content {
-          padding: 20px
-        }
-      }
-
-      .modal-overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, .5);
-        justify-content: center;
-        align-items: center;
-        z-index: 1000
-      }
-
-      .modal {
-        background: #fff;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, .2);
-        width: 90%;
-        max-width: 400px;
-        text-align: center;
-        position: relative
-      }
-
-      .modal-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center
-      }
-
-      .modal-header h3 {
-        margin: 0;
-        font-size: 1.5rem
-      }
-
-      .close-modal {
-        font-size: 1.5rem;
-        cursor: pointer;
-        color: red;
-        transition: all .3s ease
-      }
-
-      .close-modal:hover {
-        color: #8b0000
-      }
-
-      #testimonialForm {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        margin-top: 15px
-      }
-
-      #testimonialForm input,
-      #testimonialForm textarea {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        font-size: 1rem
-      }
-
-      .submit-btn {
-        padding: 10px;
-        background: #e2c96e;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 1rem;
-        transition: all .3s ease
-      }
-
-      .submit-btn:hover {
-        background: #e2c950
-      }
-
-      .success-message {
-        display: none;
-        color: green;
-        font-size: 1rem;
-        margin-top: 10px
-      }
-
-      .delete-testimonials-btn {
-        margin-top: 15px;
-        padding: 10px;
-        background: red;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 1rem;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        transition: all .3s ease
-      }
-
-      .delete-testimonials-btn i {
-        font-size: 1.2rem
-      }
-
-      .delete-testimonials-btn:hover {
-        background: #8b0000
-      }
-
-      .open-modal-btn {
-        padding: 10px 20px;
-        background: #e2c96e;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 1rem;
-        transition: all .3s ease;
-        margin-bottom: 20px
-      }
-
-      .open-modal-btn:hover {
-        background: #e2c950
-      }
-    </style>
-    <style>
-      .success-alert {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background: #4caf50;
-        color: #fff;
-        padding: 15px 20px;
-        border-radius: 8px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, .2);
-        font-size: 1rem;
-        display: none;
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all .5s ease-in-out
-      }
-
-      .success-alert.show {
-        display: block;
-        opacity: 1;
-        transform: translateY(0)
-      }
-    </style>
-    <style>
-      /* Estilos correctivos */
-      .company-icon:hover {
-        transform: none !important;
-        box-shadow: none !important;
-      }
-
-      .company-slide {
-        transition: none !important;
-      }
-
-      .company-slide:hover {
-        transform: none !important;
-        box-shadow: none !important;
-      }
-    </style>
-    <style>
-      .service-item:hover {
-        background: #f8f9fa;
-      }
-
-      .service-detail {
-        animation: fadeIn 0.3s ease-out;
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(-10px);
-        }
-
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-    </style>
-
-    <style>
-      /* Corregir efectos hover en imagen de sistemas integrados */
-      .service-header div[style*="background-image"] {
-        transition: none !important;
-        transform: none !important;
-        box-shadow: none !important;
-      }
-
-      .service-header div[style*="background-image"]:hover {
-        transform: none !important;
-        box-shadow: none !important;
-      }
-
-      .service-header img {
-        transition: none !important;
-        transform: none !important;
-      }
-
-      .service-header:hover img {
-        transform: none !important;
-        box-shadow: none !important;
-      }
-    </style>
-    <style>
-      .system-icon,
-      .system-icon img {
-        transition: none !important;
-        transform: none !important;
-        box-shadow: none !important;
-      }
-    </style>
-    <nav>
-      <div class=logo><img alt="Leal Seguros Logo" src="./assets/Leal_Branding White.png" class=logo-img></div>
-      <div class=menu-toggle onclick=toggleMenu()><span></span> <span></span> <span></span></div>
-      <div class=nav-links><a href=#about onclick=closeMenu()>Acerca</a> <a href=#services
-          onclick=closeMenu()>Servicios</a> <a href=#reviews onclick=closeMenu()>Nuestros Clientes</a> <a
-          href=#quehacemos onclick=closeMenu()>Lineas de Negocios</a> <a href=#contacts onclick=closeMenu()>Contacto</a>
-        <div class=social-icons><a href=./muypronto.html target=_blank><i class="fa-brands fa-facebook"></i></a> <a
-            href=https://www.instagram.com/leal_asesoriasyseguros/ target=_blank><i
-              class="fa-brands fa-instagram"></i></a> <a href=./muypronto.html target=_blank><i
-              class="fa-brands fa-twitter"></i></a></div>
+<body>
+   <nav>
+      <div class="logo">
+         <img alt="Leal Seguros Logo" src="./assets/Leal_Branding_White.png" class="logo-img" loading="lazy">
       </div>
-    </nav>
-    <div class=slider-dots>
-      <div class="dot active" data-slide=0></div>
-      <div class=dot data-slide=1></div>
-      <div class=dot data-slide=2></div>
-    </div>
-    <div class=slider-container>
-      <div class=slider>
-        <div class="dark-slide slide"
-          style="background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(assets/imagen2.jpeg);background-size:cover;background-position:center;background-repeat:no-repeat">
-          <div class="first-slide-video video-container"></div>
-          <div class=slide-content>
-            <div class=slide-number>01 / 03</div>
-            <h1>Leal Asesorias & Seguros LTDA</h1>
-            <p>Bienvenidos a Leal Asesorías & Seguros LTDA. Ofrecemos soluciones integrales de seguros y servicios de
-              asesoría diseñados para satisfacer sus necesidades específicas, garantizando la tranquilidad de cada
-              persona
-              y empresa.
-          </div>
-        </div>
-        <div class="dark-slide slide"
-          style="background-image:url(./assets/Second-imge.jpg);background-size:cover;background-position:0 30%"></div>
-        <div class="dark-slide slide background-image-slide"
-          style="background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(assets/Imagen3.jpeg);background-size:cover;background-position:center;background-repeat:no-repeat">
-          <div class=slide-number>03 / 03</div>
-          <h1>Gestión Integral de Seguridad y Salud en el Trabajo</h1>
-          <p>Protegemos tu empresa y a tus trabajadores con soluciones integrales en seguridad y salud en el trabajo.
-            Cumple la normativa, reduce riesgos y mejora la productividad con nuestros expertos.</p><button
-            class=btn>GET
-            STARTED</button>
-        </div>
+      <div class="menu-toggle" onclick="toggleMenu()">
+         <span></span>
+         <span></span>
+         <span></span>
       </div>
-    </div>
-    <section class=about-section id=about>
-      <h2 class=about-heading>Acerca</h2>
-      <p class=about-description id=services>En Leal Asesorías & Seguros LTDA, nos especializamos en brindar servicios
-        de
-        asesoría y seguros personalizados. Nuestro equipo dedicado está enfocado en comprender sus necesidades y brindar
-        soluciones que protejan sus activos y su futuro. Experimente nuestro compromiso con la excelencia y la
-        satisfacción del cliente en Leal Asesorías & Seguros LTDA.
-      <div class=services-grid>
-        <div class=service-card>
-          <h3 class=service-title>Consulta de seguros</h3>
-          <p class=service-description>Aprovechando nuestro amplio conocimiento de la industria, realizamos consultas
-            detalladas para identificar sus necesidades de seguro, garantizando que reciba las mejores opciones de
-            cobertura adaptadas a su estilo de vida o requisitos comerciales.</p><a href=#contacts
-            class=contact-link>Contacto</a>
-        </div>
-        <div class="service-card middle">
-          <h3 class=service-title>Orientación experta</h3>
-          <p class=service-description>Nuestros asesores expertos brindan asistencia personalizada durante todo el
-            proceso
-            de seguro, desde la consulta inicial hasta la asistencia con reclamos, lo que garantiza una experiencia
-            fluida
-            y sin estrés.</p><a href=#contacts class=contact-link>Contacto</a>
-        </div>
-        <div class=service-card>
-          <h3 class=service-title>Evaluación de riesgos</h3>
-          <p class=service-description>En Leal Asesorías & Seguros LTDA, ofrecemos servicios integrales de evaluación de
-            riesgos, brindando evaluaciones precisas para ayudarlo a tomar decisiones informadas sobre sus inversiones
-            en
-            seguros. Confíe en nosotros para proteger su futuro con confianza.</p><a href=#contacts
-            class=contact-link>Contacto</a>
-        </div>
+      <div class="nav-links">
+         <a href="#about" onclick="closeMenu()">Servicios</a>
+         <a href="#nuestros-clientes" onclick="closeMenu()">Nuestros Clientes</a>
+         <a href="#lineasdenegocios" onclick="closeMenu()">Lineas de Negocios</a>
+         <a href="#contact" onclick="closeMenu()">Contacto</a>
+         <div class="social-icons">
+            <a href="./muypronto.html" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/leal_asesoriasyseguros/" target=_blank><i
+                  class="fa-brands fa-instagram"></i></a>
+            <a href="./muypronto.html" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+         </div>
       </div>
-    </section>
-
-    <!-- Slider de empresas -->
-    <div class="company-slider-container"
+   </nav>
+   <div class="slider-dots">
+      <div class="dot active" data-slide="0"></div>
+      <div class="dot" data-slide="1"></div>
+      <div class="dot" data-slide="2"></div>
+   </div>
+   <div class="slider-container hidden-element">
+      <div class="slider">
+         <div class="dark-slide slide"
+            style="background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(assets/imagen2.jpeg);background-size:cover;background-position:center;background-repeat:no-repeat">
+            <div class="first-slide-video video-container"></div>
+            <div class="slide-content">
+               <div class="slide-number">01 / 03</div>
+               <h1 class="hidden-element">Leal Asesorias & Seguros LTDA - Expertos en Gestión de Riesgos</h1>
+               <p class="hidden-element">Bienvenidos a Leal Asesorías & Seguros LTDA. Ofrecemos soluciones integrales de
+                  seguros y servicios de
+                  asesoría diseñados para satisfacer sus necesidades específicas, garantizando la tranquilidad de cada
+                  persona y empresa.
+            </div>
+         </div>
+         <div class="dark-slide slide"
+            style="background-image:url(./assets/Second-imge.jpg);background-size:cover;background-position:0 30%">
+         </div>
+         <div class="dark-slide slide background-image-slide"
+            style="background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(assets/Imagen3.jpeg);background-size:cover;background-position:center;background-repeat:no-repeat">
+            <div class="slide-number">03 / 03</div>
+            <h2 style="font-size: 50px;">Gestión Integral de Seguridad y Salud en el Trabajo</h2>
+            <p>Protegemos tu empresa y a tus trabajadores con soluciones integrales en seguridad y salud en el trabajo.
+               Cumple la normativa, reduce riesgos y mejora la productividad con nuestros expertos.</p>
+            <button class="btn">GET STARTED
+            </button>
+         </div>
+      </div>
+   </div>
+   <section class="about-section hidden-element" id="about">
+      <h2 class="about-heading">Acerca</h2>
+      <p class="about-description">En Leal Asesorías & Seguros LTDA, nos especializamos en brindar
+         servicios
+         de asesoría y seguros personalizados. Nuestro equipo dedicado está enfocado en comprender sus necesidades y
+         brindar soluciones que protejan sus activos y su futuro. Experimente
+         nuestro compromiso con la excelencia y la satisfacción del cliente en Leal Asesorías & Seguros LTDA.
+      </p>
+      <div class="services-grid">
+         <div class="service-card">
+            <h3 class="service-title">Consulta de seguros</h3>
+            <p class="service-description">Aprovechando nuestro amplio conocimiento de la industria, realizamos
+               consultas
+               detalladas para identificar sus necesidades de seguro, garantizando que reciba las mejores opciones de
+               cobertura adaptadas a su estilo de vida o requisitos
+               comerciales.
+            </p>
+            <a href="#contact" class="contact-link">Contacto</a>
+         </div>
+         <div class="service-card middle">
+            <h3 class="service-title">Orientación experta</h3>
+            <p class="service-description">Nuestros asesores expertos brindan asistencia personalizada durante todo
+               el
+               proceso de seguro, desde la consulta inicial hasta la asistencia con reclamos, lo que garantiza una
+               experiencia fluida y sin estrés.</p>
+            <a href="#contact" class="contact-link">Contacto</a>
+         </div>
+         <div class="service-card">
+            <h3 class="service-title">Evaluación de riesgos</h3>
+            <p class="service-description">En Leal Asesorías & Seguros LTDA, ofrecemos servicios integrales de
+               evaluación
+               de riesgos, brindando evaluaciones precisas para ayudarlo a tomar decisiones informadas sobre sus
+               inversiones en seguros. Confíe en nosotros para proteger
+               su futuro con confianza.
+            </p>
+            <a href="#contact" class="contact-link">Contacto</a>
+         </div>
+      </div>
+   </section>
+   <div id="nuestros-clientes"></div>
+   <br>
+   <br>
+   <!-- Slider de empresas -->
+   <div class="company-slider-container hidden-element"
       style="position: relative; max-width: 1000px; margin: 50px auto; overflow: hidden;">
-      <div class="nuestros-clients" style="">
-        <h2>Nuestros Clientes</h2>
+      <div class="nuestros-clients" style="text-align: center; margin-bottom: 30px;">
+         <h2 style="font-size: 2.5em;
+               color: #2c3e50;
+               text-transform: uppercase;
+               letter-spacing: 2px;
+               position: relative;
+               display: inline-block;
+               padding-bottom: 10px;">
+            Nuestros Clientes
+         </h2>
       </div>
-      <div class="company-slider-track" style="display: flex; transition: transform 0.5s ease;">
-        <div class="company-slide"
-          style="flex: 0 0 auto; width: 200px; padding: 20px; display: flex; justify-content: center; align-items: center;">
-          <img src="https://cdn-icons-png.flaticon.com/512/5968/5968764.png" class="company-icon" alt="Facebook"
-            style="width: 150px; height: 150px; object-fit: contain; filter: grayscale(100%); transition: filter 0.3s ease; cursor: pointer;">
-        </div>
-        <div class="company-slide"
-          style="flex: 0 0 auto; width: 200px; padding: 20px; display: flex; justify-content: center; align-items: center;">
-          <img src="https://cdn-icons-png.flaticon.com/512/5968/5968764.png" class="company-icon" alt="Apple"
-            style="width: 150px; height: 150px; object-fit: contain; filter: grayscale(100%); transition: filter 0.3s ease; cursor: pointer;">
-        </div>
-        <div class="company-slide"
-          style="flex: 0 0 auto; width: 200px; padding: 20px; display: flex; justify-content: center; align-items: center;">
-          <img src="https://cdn-icons-png.flaticon.com/512/5968/5968764.png" class="company-icon" alt="Microsoft"
-            style="width: 150px; height: 150px; object-fit: contain; filter: grayscale(100%); transition: filter 0.3s ease; cursor: pointer;">
-        </div>
-        <div class="company-slide"
-          style="flex: 0 0 auto; width: 200px; padding: 20px; display: flex; justify-content: center; align-items: center;">
-          <img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png" class="company-icon" alt="Twitter"
-            style="width: 150px; height: 150px; object-fit: contain; filter: grayscale(100%); transition: filter 0.3s ease; cursor: pointer;">
-        </div>
-        <div class="company-slide"
-          style="flex: 0 0 auto; width: 200px; padding: 20px; display: flex; justify-content: center; align-items: center;">
-          <img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png" class="company-icon" alt="Twitter"
-            style="width: 150px; height: 150px; object-fit: contain; filter: grayscale(100%); transition: filter 0.3s ease; cursor: pointer;">
-        </div>
-      </div>
-
+      <!-- Flechas de navegación -->
       <button class="company-slider-btn prev"
-        style="position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; padding: 15px; cursor: pointer; font-size: 18px; border-radius: 5px; left: 10px;">❮</button>
-
+         style="position: absolute; left: 5px; top: 50%; transform: translateY(50%); background: #2c3e50; color: white; border: none; padding: 15px 20px; cursor: pointer; font-size: 24px; border-radius: 50%; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2); transition: all 0.3s ease; z-index: 10;">❮</button>
       <button class="company-slider-btn next"
-        style="position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; padding: 15px; cursor: pointer; font-size: 18px; border-radius: 5px; right: 10px;">❯</button>
-    </div>
+         style="position: absolute; right: 5px; top: 50%; transform: translateY(30%); background: #2c3e50; color: white; border: none; padding: 15px 20px; cursor: pointer; font-size: 24px; border-radius: 50%; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2); transition: all 0.3s ease; z-index: 10;">❯</button>
+      <div class="company-slider-track" style="display: flex; transition: transform 0.5s ease;">
+         <div class="company-slide"
+            style="flex: 0 0 auto; width: 200px; padding: 20px; display: flex; justify-content: center; align-items: center;">
+            <img src="./assets/interlpro.png" class="company-icon" alt="Twitter"
+               style="width: 150px; height: 150px; object-fit: contain; filter: grayscale(100%); transition: filter 0.3s ease; cursor: pointer;"
+               loading="lazy">
+         </div>
+         <div class="company-slide"
+            style="flex: 0 0 auto; width: 200px; padding: 20px; display: flex; justify-content: center; align-items: center;">
+            <img src="./assets/kgp.png" class="company-icon" alt="Twitter"
+               style="width: 150px; height: 150px; object-fit: contain; filter: grayscale(100%); transition: filter 0.3s ease; cursor: pointer;"
+               loading="lazy">
+         </div>
+         <div class="company-slide"
+            style="flex: 0 0 auto; width: 200px; padding: 20px; display: flex; justify-content: center; align-items: center;">
+            <img src="./assets/lasermetal.png" class="company-icon" alt="Twitter"
+               style="width: 150px; height: 150px; object-fit: contain; filter: grayscale(100%); transition: filter 0.3s ease; cursor: pointer;"
+               loading="lazy">
+         </div>
+         <div class="company-slide"
+            style="flex: 0 0 auto; width: 200px; padding: 20px; display: flex; justify-content: center; align-items: center;">
+            <img src="./assets/maestranza.png" class="company-icon" alt="Twitter"
+               style="width: 150px; height: 150px; object-fit: contain; filter: grayscale(100%); transition: filter 0.3s ease; cursor: pointer;"
+               loading="lazy">
+         </div>
+         <div class="company-slide"
+            style="flex: 0 0 auto; width: 200px; padding: 20px; display: flex; justify-content: center; align-items: center;">
+            <img src="./assets/fadume.png" class="company-icon" alt="Twitter"
+               style="width: 150px; height: 150px; object-fit: contain; filter: grayscale(100%); transition: filter 0.3s ease; cursor: pointer;"
+               loading="lazy">
+         </div>
+         <div class="company-slide"
+            style="flex: 0 0 auto; width: 200px; padding: 20px; display: flex; justify-content: center; align-items: center;">
+            <img src="./assets/bit2bit.png" class="company-icon" alt="Twitter"
+               style="width: 150px; height: 150px; object-fit: contain; filter: grayscale(100%); transition: filter 0.3s ease; cursor: pointer;"
+               loading="lazy">
+         </div>
+         <div class="company-slide"
+            style="flex: 0 0 auto; width: 200px; padding: 20px; display: flex; justify-content: center; align-items: center;">
+            <img src="./assets/salus-medical.png" class="company-icon" alt="Twitter"
+               style="width: 150px; height: 150px; object-fit: contain; filter: grayscale(100%); transition: filter 0.3s ease; cursor: pointer;"
+               loading="lazy">
+         </div>
+         <div class="company-slide"
+            style="flex: 0 0 auto; width: 200px; padding: 20px; display: flex; justify-content: center; align-items: center;">
+            <img src="./assets/solil.png" class="company-icon" alt="Twitter"
+               style="width: 150px; height: 150px; object-fit: contain; filter: grayscale(100%); transition: filter 0.3s ease; cursor: pointer;"
+               loading="lazy">
+         </div>
+         <div class="company-slide"
+            style="flex: 0 0 auto; width: 200px; padding: 20px; display: flex; justify-content: center; align-items: center;">
+            <img src="./assets/exotica-international.png" class="company-icon" alt="Twitter"
+               style="width: 150px; height: 150px; object-fit: contain; filter: grayscale(100%); transition: filter 0.3s ease; cursor: pointer;"
+               loading="lazy">
+         </div>
+         <div class="company-slide"
+            style="flex: 0 0 auto; width: 200px; padding: 20px; display: flex; justify-content: center; align-items: center;">
+            <img src="./assets/inversiones-luro.png" class="company-icon" alt="Facebook"
+               style="width: 150px; height: 150px; object-fit: contain; filter: grayscale(100%); transition: filter 0.3s ease; cursor: pointer;"
+               loading="lazy">
+         </div>
+         <div class="company-slide"
+            style="flex: 0 0 auto; width: 200px; padding: 20px; display: flex; justify-content: center; align-items: center;">
+            <img src="./assets/imversiones-mahi.png" class="company-icon" alt="Apple"
+               style="width: 150px; height: 150px; object-fit: contain; filter: grayscale(100%); transition: filter 0.3s ease; cursor: pointer;"
+               loading="lazy">
+         </div>
+         <div class="company-slide"
+            style="flex: 0 0 auto; width: 200px; padding: 20px; display: flex; justify-content: center; align-items: center;">
+            <img src="./assets/ingesaenz.png" class="company-icon" alt="Microsoft"
+               style="width: 150px; height: 150px; object-fit: contain; filter: grayscale(100%); transition: filter 0.3s ease; cursor: pointer;"
+               loading="lazy">
+         </div>
+      </div>
+   </div>
 
-    <!-- Sección de Servicios -->
-    <section class="services-section" style="padding: 80px 20px; background: #f9f9f9;">
+   <!-- Sección de Servicios -->
+   <section id="lineasdenegocios" class="services-section hidden-element"
+      style="padding: 80px 20px; background: #f9f9f9;">
       <div class="section-content" style="max-width: 1200px; margin: 0 auto;">
-        <h2 class="section-title"
-          style="text-align: center; margin-bottom: 60px; color: #2c3e50; font-size: 2.5em; position: relative;">
-          Nuestros Servicios Especializados
-          <div style="width: 60px; height: 3px; background: #e2c96e; margin: 15px auto 0;"></div>
-        </h2>
-
-        <div class="services-container"
-          style="background: white; padding: 50px; border-radius: 15px; box-shadow: 0 5px 25px rgba(0,0,0,0.08);">
-          <!-- Sistemas Integrados de Gestión -->
-          <div class="service-category" style="margin-bottom: 50px;">
-            <div class="service-header" style="gap: 15px; margin-bottom: 30px;">
-              <h3 style="color: #2c3e50; font-size: 1.8em;">Sistemas Integrados de Gestión</h3>
+         <h2 class="section-title"
+            style="text-align: center; margin-bottom: 60px; color: #2c3e50; font-size: 2.5em; position: relative;">
+            Lineas de Negocios
+         </h2>
+         <div class="values-grid "
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-bottom: 80px;">
+            <div class="value-card hidden-element" style="background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+      transition: all 0.3s ease; animation: breathing 2.5s infinite alternate;">
+               <h3 style="color: #e2c96e; margin-bottom: 15px; font-size: 1.3em;">Lealtad + Ética</h3>
+               <p style="color: #555; line-height: 1.6;">Compromiso con principios y relaciones transparentes.</p>
             </div>
-            <ul style="list-style: none; padding-left: 0;">
+            <div class="value-card" style="background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+      transition: all 0.3s ease; animation: breathing 2.5s infinite alternate;">
+               <h3 style="color: #e2c96e; margin-bottom: 15px; font-size: 1.3em;">Calidad + Integridad</h3>
+               <p style="color: #555; line-height: 1.6;">Resultados impecables y comunicación honesta.</p>
+            </div>
+            <div class="value-card hidden-element" style="background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+      transition: all 0.3s ease; animation: breathing 2.5s infinite alternate;">
+               <h3 style="color: #e2c96e; margin-bottom: 15px; font-size: 1.3em;">Liderazgo + Compromiso</h3>
+               <p style="color: #555; line-height: 1.6;">Orientación profesional para cumplir objetivos estratégicos.
+               </p>
+            </div>
+            <div class="value-card" style="background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+      transition: all 0.3s ease; animation: breathing 2.5s infinite alternate;">
+               <h3 style="color: #e2c96e; margin-bottom: 15px; font-size: 1.3em;">Honestidad + Responsabilidad</h3>
+               <p style="color: #555; line-height: 1.6;">Decisiones seguras y cumplimiento de metas.</p>
+            </div>
+            <div class="value-card hidden-element" style="background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+      transition: all 0.3s ease; animation: breathing 2.5s infinite alternate;">
+               <h3 style="color: #e2c96e; margin-bottom: 15px; font-size: 1.3em;">Innovación + Creatividad</h3>
+               <p style="color: #555; line-height: 1.6;">Soluciones vanguardistas para el crecimiento empresarial.</p>
+            </div>
+         </div>
 
-              <li class="service-item"
-                style="padding: 15px 0; border-bottom: 1px solid #eee; cursor: pointer; transition: all 0.3s ease;">
-                <div style="display: flex; align-items: center; gap: 10px;">
-                  <div style="width: 8px; height: 8px; background: #e2c96e; border-radius: 50%;"></div>
-                  <span style="font-weight: 500;">Diseño e implementación bajo normas internacionales</span>
-                </div>
-                <div class="service-detail"
-                  style="display: none; padding: 15px 20px 0 25px; color: #666; line-height: 1.6;">
-                  <p>Implementamos sistemas de gestión según:</p>
-                  <ul style="margin: 10px 0 0 20px;">
-                    <li>ISO 9001:2015 (Calidad)</li>
-                    <li>ISO 14001:2015 (Ambiental)</li>
-                    <li>ISO 45001:2018 (Seguridad y salud)</li>
-                    <li>BASC/ISO 28000 (Seguridad logística)</li>
-                    <li>Decreto 1072/2015 y Resolución 0312/2019</li>
-                  </ul>
-                </div>
-              </li>
+         <style>
 
-              <li class="service-item"
-                style="padding: 15px 0; border-bottom: 1px solid #eee; cursor: pointer; transition: all 0.3s ease;">
-                <div style="display: flex; align-items: center; gap: 10px;">
-                  <div style="width: 8px; height: 8px; background: #e2c96e; border-radius: 50%;"></div>
-                  <span style="font-weight: 500;">Administración y actualización de sistemas</span>
-                </div>
-                <div class="service-detail"
-                  style="display: none; padding: 15px 20px 0 25px; color: #666; line-height: 1.6;">
-                  <ul style="margin: 10px 0 0 20px;">
-                    <li>Actualización semanal de documentos e indicadores</li>
-                    <li>Soporte en auditorías con entes certificadores</li>
-                    <li>Acompañamiento en visitas de ARL y Ministerio de Trabajo</li>
-                    <li>Mejora continua del sistema</li>
-                  </ul>
-                </div>
-              </li>
-              <!-- Suministros de inspector SSTA -->
-              <li class="service-item"
-                style="padding: 15px 0; border-bottom: 1px solid #eee; cursor: pointer; transition: all 0.3s ease;">
-                <div style="display: flex; align-items: center; gap: 10px;">
-                  <div style="width: 8px; height: 8px; background: #e2c96e; border-radius: 50%;"></div>
-                  <span style="font-weight: 500;">Suministros de inspector SSTA</span>
-                </div>
-                <div class="service-detail"
-                  style="display: none; padding: 15px 20px 0 25px; color: #666; line-height: 1.6;">
-                  <ul style="margin: 10px 0 0 20px;">
-                    <li>Personal calificado para acompañamiento en sitio</li>
-                    <li>Elaboración de permisos de trabajo y AST</li>
-                    <li>Inspección de tareas y formatos</li>
-                    <li>Coordinadores de trabajo en alturas certificados</li>
-                  </ul>
-                </div>
-              </li>
-
-              <!-- Auditorías -->
-              <li class="service-item"
-                style="padding: 15px 0; border-bottom: 1px solid #eee; cursor: pointer; transition: all 0.3s ease;">
-                <div style="display: flex; align-items: center; gap: 10px;">
-                  <div style="width: 8px; height: 8px; background: #e2c96e; border-radius: 50%;"></div>
-                  <span style="font-weight: 500;">Auditorías especializadas</span>
-                </div>
-                <div class="service-detail"
-                  style="display: none; padding: 15px 20px 0 25px; color: #666; line-height: 1.6;">
-                  <ul style="margin: 10px 0 0 20px;">
-                    <li>Sistemas de gestión (ISO 9001, 14001, 45001)</li>
-                    <li>Cumplimiento legal (Decreto 1072/2015)</li>
-                    <li>Seguridad vial (Resolución 0312/2019)</li>
-                    <li>Preparación para certificaciones BASC y GUÍA RUC</li>
-                  </ul>
-                </div>
-              </li>
-
-              <!-- Entrenamiento y capacitación -->
-              <li class="service-item"
-                style="padding: 15px 0; border-bottom: 1px solid #eee; cursor: pointer; transition: all 0.3s ease;">
-                <div style="display: flex; align-items: center; gap: 10px;">
-                  <div style="width: 8px; height: 8px; background: #e2c96e; border-radius: 50%;"></div>
-                  <span style="font-weight: 500;">Entrenamiento y capacitación</span>
-                </div>
-                <div class="service-detail"
-                  style="display: none; padding: 15px 20px 0 25px; color: #666; line-height: 1.6;">
-                  <ul style="margin: 10px 0 0 20px;">
-                    <li>Brigadas de emergencia (básico, intermedio, avanzado)</li>
-                    <li>Trabajos de alto riesgo (alturas, espacios confinados)</li>
-                    <li>Normas técnicas colombianas</li>
-                    <li>Buenas Prácticas de Manufactura (BPM)</li>
-                    <li>Investigación de incidentes</li>
-                    <li>Gestión de riesgos psicosociales</li>
-                  </ul>
-                </div>
-              </li>
-
-              <!-- Programas de riesgos -->
-              <li class="service-item"
-                style="padding: 15px 0; border-bottom: 1px solid #eee; cursor: pointer; transition: all 0.3s ease;">
-                <div style="display: flex; align-items: center; gap: 10px;">
-                  <div style="width: 8px; height: 8px; background: #e2c96e; border-radius: 50%;"></div>
-                  <span style="font-weight: 500;">Programas de riesgos prioritarios</span>
-                </div>
-                <div class="service-detail"
-                  style="display: none; padding: 15px 20px 0 25px; color: #666; line-height: 1.6;">
-                  <ul style="margin: 10px 0 0 20px;">
-                    <li>Trabajos en alturas y espacios confinados</li>
-                    <li>Manejo de sustancias peligrosas</li>
-                    <li>Riesgo eléctrico y mecánico</li>
-                    <li>Prevención de riesgos psicosociales</li>
-                    <li>Señalización y orden en el trabajo</li>
-                  </ul>
-                </div>
-              </li>
-
-              <!-- Vigilancia epidemiológica -->
-              <li class="service-item"
-                style="padding: 15px 0; border-bottom: 1px solid #eee; cursor: pointer; transition: all 0.3s ease;">
-                <div style="display: flex; align-items: center; gap: 10px;">
-                  <div style="width: 8px; height: 8px; background: #e2c96e; border-radius: 50%;"></div>
-                  <span style="font-weight: 500;">Sistema de vigilancia epidemiológica</span>
-                </div>
-                <div class="service-detail"
-                  style="display: none; padding: 15px 20px 0 25px; color: #666; line-height: 1.6;">
-                  <ul style="margin: 10px 0 0 20px;">
-                    <li>Evaluación de riesgos psicosociales</li>
-                    <li>Diagnóstico biomecánico y osteomuscular</li>
-                    <li>Vigilancia auditiva y visual</li>
-                    <li>Programas contra adicciones</li>
-                    <li>Prevención de enfermedades laborales</li>
-                  </ul>
-                </div>
-              </li>
-
-              <!-- Seguridad vial -->
-              <li class="service-item"
-                style="padding: 15px 0; border-bottom: 1px solid #eee; cursor: pointer; transition: all 0.3s ease;">
-                <div style="display: flex; align-items: center; gap: 10px;">
-                  <div style="width: 8px; height: 8px; background: #e2c96e; border-radius: 50%;"></div>
-                  <span style="font-weight: 500;">Plan estratégico de seguridad vial</span>
-                </div>
-                <div class="service-detail"
-                  style="display: none; padding: 15px 20px 0 25px; color: #666; line-height: 1.6;">
-                  <ul style="margin: 10px 0 0 20px;">
-                    <li>Diseño bajo normativa vigente</li>
-                    <li>Cursos de manejo preventivo</li>
-                    <li>Capacitación transporte de mercancías peligrosas</li>
-                    <li>Estudios de movilidad y señalización</li>
-                    <li>Gestión de contingencias viales</li>
-                  </ul>
-                </div>
-              </li>
-
-              <!-- Transformación cultural -->
-              <li class="service-item"
-                style="padding: 15px 0; border-bottom: 1px solid #eee; cursor: pointer; transition: all 0.3s ease;">
-                <div style="display: flex; align-items: center; gap: 10px;">
-                  <div style="width: 8px; height: 8px; background: #e2c96e; border-radius: 50%;"></div>
-                  <span style="font-weight: 500;">Programa de transformación cultural</span>
-                </div>
-                <div class="service-detail"
-                  style="display: none; padding: 15px 20px 0 25px; color: #666; line-height: 1.6;">
-                  <ul style="margin: 10px 0 0 20px;">
-                    <li>Fortalecimiento del autocuidado</li>
-                    <li>Metodología SER-Técnico (coaching operacional)</li>
-                    <li>Reducción de actos inseguros</li>
-                    <li>Compromiso organizacional</li>
-                  </ul>
-                </div>
-              </li>
-
-              <!-- Campañas lúdicas -->
-              <li class="service-item" style="padding: 15px 0; cursor: pointer; transition: all 0.3s ease;">
-                <div style="display: flex; align-items: center; gap: 10px;">
-                  <div style="width: 8px; height: 8px; background: #e2c96e; border-radius: 50%;"></div>
-                  <span style="font-weight: 500;">Campañas lúdicas de prevención</span>
-                </div>
-                <div class="service-detail"
-                  style="display: none; padding: 15px 20px 0 25px; color: #666; line-height: 1.6;">
-                  <ul style="margin: 10px 0 0 20px;">
-                    <li>Personajes temáticos por riesgo</li>
-                    <li>Pausas activas interactivas</li>
-                    <li>Simulacros y desafíos de brigadas</li>
-                    <li>Talleres de primeros auxilios prácticos</li>
-                    <li>Masajes antiestrés en sitio</li>
-                  </ul>
-                </div>
-              </li>
-
-            </ul>
-          </div>
-
-        </div>
+         </style>
+         <div class="services-container hidden-element"
+            style="background: white; padding: 50px; border-radius: 15px; box-shadow: 0 5px 25px rgba(0,0,0,0.08);">
+            <!-- Sistemas Integrados de Gestión -->
+            <div class="service-category" style="margin-bottom: 50px;">
+               <div class="service-header" style="gap: 15px; margin-bottom: 30px;">
+                  <h3 style="color: #2c3e50; font-size: 1.8em;">Sistemas Integrados de Gestión</h3>
+               </div>
+               <ul style="list-style: none; padding-left: 0;">
+                  <li class="service-items"
+                     style="padding: 15px 0; border-bottom: 1px solid #eee; cursor: pointer; transition: all 0.3s ease;">
+                     <div style="display: flex; align-items: center; gap: 10px;">
+                        <div style="width: 8px; height: 8px; background: #e2c96e; border-radius: 50%;"></div>
+                        <span style="font-weight: 500;">Diseño e implementación bajo normas internacionales</span>
+                     </div>
+                     <div class="service-details"
+                        style="display: none; padding: 15px 20px 0 25px; color: #666; line-height: 1.6;">
+                        <p>Implementamos sistemas de gestión según:</p>
+                        <ul style="margin: 10px 0 0 20px;">
+                           <li>ISO 9001:2015 (Calidad)</li>
+                           <li>ISO 14001:2015 (Ambiental)</li>
+                           <li>ISO 45001:2018 (Seguridad y salud)</li>
+                           <li>BASC/ISO 28000 (Seguridad logística)</li>
+                           <li>Decreto 1072/2015 y Resolución 0312/2019</li>
+                        </ul>
+                     </div>
+                  </li>
+                  <li class="service-items"
+                     style="padding: 15px 0; border-bottom: 1px solid #eee; cursor: pointer; transition: all 0.3s ease;">
+                     <div style="display: flex; align-items: center; gap: 10px;">
+                        <div style="width: 8px; height: 8px; background: #e2c96e; border-radius: 50%;"></div>
+                        <span style="font-weight: 500;">Administración y actualización de sistemas</span>
+                     </div>
+                     <div class="service-details"
+                        style="display: none; padding: 15px 20px 0 25px; color: #666; line-height: 1.6;">
+                        <ul style="margin: 10px 0 0 20px;">
+                           <li>Actualización semanal de documentos e indicadores</li>
+                           <li>Soporte en auditorías con entes certificadores</li>
+                           <li>Acompañamiento en visitas de ARL y Ministerio de Trabajo</li>
+                           <li>Mejora continua del sistema</li>
+                        </ul>
+                     </div>
+                  </li>
+                  <!-- Suministros de inspector SSTA -->
+                  <li class="service-items"
+                     style="padding: 15px 0; border-bottom: 1px solid #eee; cursor: pointer; transition: all 0.3s ease;">
+                     <div style="display: flex; align-items: center; gap: 10px;">
+                        <div style="width: 8px; height: 8px; background: #e2c96e; border-radius: 50%;"></div>
+                        <span style="font-weight: 500;">Suministros de inspector SSTA</span>
+                     </div>
+                     <div class="service-details"
+                        style="display: none; padding: 15px 20px 0 25px; color: #666; line-height: 1.6;">
+                        <ul style="margin: 10px 0 0 20px;">
+                           <li>Personal calificado para acompañamiento en sitio</li>
+                           <li>Elaboración de permisos de trabajo y AST</li>
+                           <li>Inspección de tareas y formatos</li>
+                           <li>Coordinadores de trabajo en alturas certificados</li>
+                        </ul>
+                     </div>
+                  </li>
+                  <!-- Auditorías -->
+                  <li class="service-items"
+                     style="padding: 15px 0; border-bottom: 1px solid #eee; cursor: pointer; transition: all 0.3s ease;">
+                     <div style="display: flex; align-items: center; gap: 10px;">
+                        <div style="width: 8px; height: 8px; background: #e2c96e; border-radius: 50%;"></div>
+                        <span style="font-weight: 500;">Auditorías especializadas</span>
+                     </div>
+                     <div class="service-details"
+                        style="display: none; padding: 15px 20px 0 25px; color: #666; line-height: 1.6;">
+                        <ul style="margin: 10px 0 0 20px;">
+                           <li>Sistemas de gestión (ISO 9001, 14001, 45001)</li>
+                           <li>Cumplimiento legal (Decreto 1072/2015)</li>
+                           <li>Seguridad vial (Resolución 0312/2019)</li>
+                           <li>Preparación para certificaciones BASC y GUÍA RUC</li>
+                        </ul>
+                     </div>
+                  </li>
+                  <!-- Entrenamiento y capacitación -->
+                  <li class="service-items"
+                     style="padding: 15px 0; border-bottom: 1px solid #eee; cursor: pointer; transition: all 0.3s ease;">
+                     <div style="display: flex; align-items: center; gap: 10px;">
+                        <div style="width: 8px; height: 8px; background: #e2c96e; border-radius: 50%;"></div>
+                        <span style="font-weight: 500;">Entrenamiento y capacitación</span>
+                     </div>
+                     <div class="service-details"
+                        style="display: none; padding: 15px 20px 0 25px; color: #666; line-height: 1.6;">
+                        <ul style="margin: 10px 0 0 20px;">
+                           <li>Brigadas de emergencia (básico, intermedio, avanzado)</li>
+                           <li>Trabajos de alto riesgo (alturas, espacios confinados)</li>
+                           <li>Normas técnicas colombianas</li>
+                           <li>Buenas Prácticas de Manufactura (BPM)</li>
+                           <li>Investigación de incidentes</li>
+                           <li>Gestión de riesgos psicosociales</li>
+                        </ul>
+                     </div>
+                  </li>
+                  <!-- Programas de riesgos -->
+                  <li class="service-items"
+                     style="padding: 15px 0; border-bottom: 1px solid #eee; cursor: pointer; transition: all 0.3s ease;">
+                     <div style="display: flex; align-items: center; gap: 10px;">
+                        <div style="width: 8px; height: 8px; background: #e2c96e; border-radius: 50%;"></div>
+                        <span style="font-weight: 500;">Programas de riesgos prioritarios</span>
+                     </div>
+                     <div class="service-details"
+                        style="display: none; padding: 15px 20px 0 25px; color: #666; line-height: 1.6;">
+                        <ul style="margin: 10px 0 0 20px;">
+                           <li>Trabajos en alturas y espacios confinados</li>
+                           <li>Manejo de sustancias peligrosas</li>
+                           <li>Riesgo eléctrico y mecánico</li>
+                           <li>Prevención de riesgos psicosociales</li>
+                           <li>Señalización y orden en el trabajo</li>
+                        </ul>
+                     </div>
+                  </li>
+                  <!-- Vigilancia epidemiológica -->
+                  <li class="service-items"
+                     style="padding: 15px 0; border-bottom: 1px solid #eee; cursor: pointer; transition: all 0.3s ease;">
+                     <div style="display: flex; align-items: center; gap: 10px;">
+                        <div style="width: 8px; height: 8px; background: #e2c96e; border-radius: 50%;"></div>
+                        <span style="font-weight: 500;">Sistema de vigilancia epidemiológica</span>
+                     </div>
+                     <div class="service-details"
+                        style="display: none; padding: 15px 20px 0 25px; color: #666; line-height: 1.6;">
+                        <ul style="margin: 10px 0 0 20px;">
+                           <li>Evaluación de riesgos psicosociales</li>
+                           <li>Diagnóstico biomecánico y osteomuscular</li>
+                           <li>Vigilancia auditiva y visual</li>
+                           <li>Programas contra adicciones</li>
+                           <li>Prevención de enfermedades laborales</li>
+                        </ul>
+                     </div>
+                  </li>
+                  <!-- Seguridad vial -->
+                  <li class="service-items"
+                     style="padding: 15px 0; border-bottom: 1px solid #eee; cursor: pointer; transition: all 0.3s ease;">
+                     <div style="display: flex; align-items: center; gap: 10px;">
+                        <div style="width: 8px; height: 8px; background: #e2c96e; border-radius: 50%;"></div>
+                        <span style="font-weight: 500;">Plan estratégico de seguridad vial</span>
+                     </div>
+                     <div class="service-details"
+                        style="display: none; padding: 15px 20px 0 25px; color: #666; line-height: 1.6;">
+                        <ul style="margin: 10px 0 0 20px;">
+                           <li>Diseño bajo normativa vigente</li>
+                           <li>Cursos de manejo preventivo</li>
+                           <li>Capacitación transporte de mercancías peligrosas</li>
+                           <li>Estudios de movilidad y señalización</li>
+                           <li>Gestión de contingencias viales</li>
+                        </ul>
+                     </div>
+                  </li>
+                  <!-- Transformación cultural -->
+                  <li class="service-items"
+                     style="padding: 15px 0; border-bottom: 1px solid #eee; cursor: pointer; transition: all 0.3s ease;">
+                     <div style="display: flex; align-items: center; gap: 10px;">
+                        <div style="width: 8px; height: 8px; background: #e2c96e; border-radius: 50%;"></div>
+                        <span style="font-weight: 500;">Programa de transformación cultural</span>
+                     </div>
+                     <div class="service-details"
+                        style="display: none; padding: 15px 20px 0 25px; color: #666; line-height: 1.6;">
+                        <ul style="margin: 10px 0 0 20px;">
+                           <li>Fortalecimiento del autocuidado</li>
+                           <li>Metodología SER-Técnico (coaching operacional)</li>
+                           <li>Reducción de actos inseguros</li>
+                           <li>Compromiso organizacional</li>
+                        </ul>
+                     </div>
+                  </li>
+                  <!-- Campañas lúdicas -->
+                  <li class="service-items" style="padding: 15px 0; cursor: pointer; transition: all 0.3s ease;">
+                     <div style="display: flex; align-items: center; gap: 10px;">
+                        <div style="width: 8px; height: 8px; background: #e2c96e; border-radius: 50%;"></div>
+                        <span style="font-weight: 500;">Campañas lúdicas de prevención</span>
+                     </div>
+                     <div class="service-details"
+                        style="display: none; padding: 15px 20px 0 25px; color: #666; line-height: 1.6;">
+                        <ul style="margin: 10px 0 0 20px;">
+                           <li>Personajes temáticos por riesgo</li>
+                           <li>Pausas activas interactivas</li>
+                           <li>Simulacros y desafíos de brigadas</li>
+                           <li>Talleres de primeros auxilios prácticos</li>
+                           <li>Masajes antiestrés en sitio</li>
+                        </ul>
+                     </div>
+                  </li>
+               </ul>
+            </div>
+         </div>
       </div>
-    </section>
+   </section>
 
-    <div class=contact-section>
-      <h2 class=contact-title style=color:#fff>Contáctanos</h2>
-      <div class=contact-grid>
-        <div class=contact-item>
-          <div class=contact-icon><svg fill="rgb(226, 201, 110)" height=200 viewBox="0 0 32 32" width=200
-              xmlns=http://www.w3.org/2000/svg>
-              <path
-                d="M21.333 3.778H9.926a.815.815 0 00-.815.815v22.815c0 .45.365.815.815.815h11.407c.45 0 .815-.365.815-.815V4.593a.815.815 0 00-.815-.815zm0-2.445c1.8 0 3.259 1.459 3.259 3.259v22.815c0 1.8-1.459 3.259-3.259 3.259H9.926a3.259 3.259 0 01-3.259-3.259V4.592c0-1.8 1.459-3.259 3.259-3.259h11.407zM15.63 24.148a1.63 1.63 0 110 3.26 1.63 1.63 0 010-3.26zm2.037-19.555a.407.407 0 110 .814h-4.074a.407.407 0 110-.814h4.074z">
-              </path>
-            </svg></div>
-          <h3 id=contacts>Contacto</h3>
-          <div class=box-emails>
-            <div
-              style="display:flex;align-items:center;gap:12px;background:#1a1f2e;padding:15px;border-radius:12px;box-shadow:inset 3px 3px 6px #141823,inset -3px -3px 6px #222836;transition:all .3s ease-in-out;cursor:pointer">
-              <i class="fas fa-envelope" style=color:#ff9800;font-size:1.3rem></i> <a
-                href="mailto:contabilidad@lealays.com"
-                style="text-decoration:none;color:#fff;font-weight:700">contabilidad@lealays.com</a>
+
+   <div id="contact" class="contact-section hidden-element"
+      style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 50px 20px; background: #1a1f2e;">
+      <h2 class="contact-title" style="color:#fff;">Contáctanos</h2>
+      <div class="contact-grid"
+         style="display: flex; justify-content: center; align-items: flex-start; gap: 60px; max-width: 1000px; width: 100%;">
+         <div class="contact-item">
+            <div class="contact-icon">
+               <svg fill="rgb(226, 201, 110)" "height=200 viewBox=" 0 0 32 32" width=200
+                  xmlns=http://www.w3.org/2000/svg">
+                  <path
+                     d="M21.333 3.778H9.926a.815.815 0 00-.815.815v22.815c0 .45.365.815.815.815h11.407c.45 0 .815-.365.815-.815V4.593a.815.815 0 00-.815-.815zm0-2.445c1.8 0 3.259 1.459 3.259 3.259v22.815c0 1.8-1.459 3.259-3.259 3.259H9.926a3.259 3.259 0 01-3.259-3.259V4.592c0-1.8 1.459-3.259 3.259-3.259h11.407zM15.63 24.148a1.63 1.63 0 110 3.26 1.63 1.63 0 010-3.26zm2.037-19.555a.407.407 0 110 .814h-4.074a.407.407 0 110-.814h4.074z">
+                  </path>
+               </svg>
             </div>
-            <div
-              style="display:flex;align-items:center;gap:12px;background:#1a1f2e;padding:15px;border-radius:12px;box-shadow:inset 3px 3px 6px #141823,inset -3px -3px 6px #222836;transition:all .3s ease-in-out;cursor:pointer">
-              <i class="fas fa-envelope" style=color:#4caf50;font-size:1.3rem></i> <a href="mailto:gerencia@lealays.com"
-                style="text-decoration:none;color:#fff;font-weight:700">gerencia@lealays.com</a>
+            <h3>Contacto</h3>
+            <div class="box-emails">
+               <div
+                  style="display:flex;align-items:center;gap:12px;background:#1a1f2e;padding:15px;border-radius:12px;box-shadow:inset 3px 3px 6px #141823,inset -3px -3px 6px #222836;transition:all .3s ease-in-out;cursor:pointer">
+                  <i class="fas fa-envelope" style="color:#ff9800;font-size:1.3rem;"></i>
+                  <a href="mailto:contabilidad@lealays.com"
+                     style="text-decoration:none;color:#fff;font-weight:700">contabilidad@lealays.com</a>
+               </div>
+               <div
+                  style="display:flex;align-items:center;gap:12px;background:#1a1f2e;padding:15px;border-radius:12px;box-shadow:inset 3px 3px 6px #141823,inset -3px -3px 6px #222836;transition:all .3s ease-in-out;cursor:pointer">
+                  <i class="fas fa-envelope" style="color:#4caf50;font-size:1.3rem;"></i>
+                  <a href="mailto:gerencia@lealays.com"
+                     style="text-decoration:none;color:#fff;font-weight:700">gerencia@lealays.com</a>
+               </div>
+               <div
+                  style="display:flex;align-items:center;gap:12px;background:#1a1f2e;padding:15px;border-radius:12px;box-shadow:inset 3px 3px 6px #141823,inset -3px -3px 6px #222836;transition:all .3s ease-in-out;cursor:pointer">
+                  <i class="fas fa-envelope" style="color:#2196f3;font-size:1.3rem;"></i>
+                  <a href="mailto:comercial@lealays.com"
+                     style="text-decoration:none;color:#fff;font-weight:700">comercial@lealays.com</a>
+               </div>
+               <div
+                  style="display:flex;align-items:center;gap:12px;background:#1a1f2e;padding:15px;border-radius:12px;box-shadow:inset 3px 3px 6px #141823,inset -3px -3px 6px #222836;transition:all .3s ease-in-out;cursor:pointer">
+                  <i class="fas fa-envelope" style="color:#e91e63;font-size:1.3rem;"></i>
+                  <a href="mailto:agendamientos@lealays.com"
+                     style="text-decoration:none;color:#fff;font-weight:700">agendamientos@lealays.com</a>
+               </div>
+               <div
+                  style="display:flex;align-items:center;gap:12px;background:#1a1f2e;padding:15px;border-radius:12px;box-shadow:inset 3px 3px 6px #141823,inset -3px -3px 6px #222836;transition:all .3s ease-in-out;cursor:pointer">
+                  <i class="fas fa-envelope" style="color:#9c27b0;font-size:1.3rem;"></i>
+                  <a href="mailto:hseq@lealays.com"
+                     style="text-decoration:none;color:#fff;font-weight:700">hseq@lealays.com</a>
+               </div>
+               <div
+                  style="display:flex;align-items:center;gap:12px;background:#1a1f2e;padding:15px;border-radius:12px;box-shadow:inset 3px 3px 6px #141823,inset -3px -3px 6px #222836;transition:all .3s ease-in-out;cursor:pointer">
+                  <i class="fas fa-phone-alt" style="color:#ff5722;font-size:1.3rem;"></i>
+                  <a href="tel:+573012852588" style="text-decoration:none;color:#fff;font-weight:700">+57 301
+                     2852588</a>
+               </div>
             </div>
-            <div
-              style="display:flex;align-items:center;gap:12px;background:#1a1f2e;padding:15px;border-radius:12px;box-shadow:inset 3px 3px 6px #141823,inset -3px -3px 6px #222836;transition:all .3s ease-in-out;cursor:pointer">
-              <i class="fas fa-envelope" style=color:#2196f3;font-size:1.3rem></i> <a href=mailto:comercial@lealays.com
-                style=text-decoration:none;color:#fff;font-weight:700>comercial@lealays.com</a>
+         </div>
+         <div class="contact-item">
+            <div class="contact-icon">
+               <svg fill="rgb(226, 201, 110)" "height=60 viewBox=" 0 0 32 32" width=60
+                  xmlns=http://www.w3.org/2000/svg">
+                  <path
+                     d="M20.348 20.277a1.055 1.055 0 00-1.148.975v.01a1.055 1.055 0 00.975 1.148h.01c6.806.579 9.681 2.519 9.681 3.2 0 .955-4.714 3.2-13.867 3.2s-13.867-2.245-13.867-3.2c0-.681 2.875-2.621 9.681-3.2a1.07 1.07 0 00.985-1.148v-.01a1.07 1.07 0 00-1.148-.985h-.01C6.266 20.734-.002 22.41-.002 25.61c0 3.667 8.3 5.333 16 5.333s16-1.666 16-5.333c0-3.2-6.268-4.876-11.652-5.333z">
+                  </path>
+                  <path d="M14.933 13.775V25.6a1.067 1.067 0 102.134 0V13.775a6.398 6.398 0 10-2.133 0z"></path>
+               </svg>
             </div>
+            <h3>Ubicación</h3>
             <div
-              style="display:flex;align-items:center;gap:12px;background:#1a1f2e;padding:15px;border-radius:12px;box-shadow:inset 3px 3px 6px #141823,inset -3px -3px 6px #222836;transition:all .3s ease-in-out;cursor:pointer">
-              <i class="fas fa-envelope" style=color:#e91e63;font-size:1.3rem></i> <a
-                href=mailto:agendamientos@lealays.com
-                style=text-decoration:none;color:#fff;font-weight:700>agendamientos@lealays.com</a>
+               style="display:flex;flex-direction:column;align-items:center;justify-content:center;background:#1a1f2e;padding:15px 20px;border-radius:10px;box-shadow:inset 3px 3px 6px #141823,inset -3px -3px 6px #222836;transition:all .3s ease-in-out;color:#fff;font-size:1.1rem;text-align:center;width:fit-content;margin:20px auto;cursor:pointer">
+               <p><i class="fa-solid fa-location-dot" style="color:#fc0;font-size:1.3rem;"></i> Barranquilla, Atlántico
+               </p>
+               <p><i class="fa-solid fa-globe" style="color:#0cf;font-size:1.3rem;"></i> Colombia</p>
             </div>
-            <div
-              style="display:flex;align-items:center;gap:12px;background:#1a1f2e;padding:15px;border-radius:12px;box-shadow:inset 3px 3px 6px #141823,inset -3px -3px 6px #222836;transition:all .3s ease-in-out;cursor:pointer">
-              <i class="fas fa-envelope" style=color:#9c27b0;font-size:1.3rem></i> <a href=mailto:hseq@lealays.com
-                style=text-decoration:none;color:#fff;font-weight:700>hseq@lealays.com</a>
-            </div>
-            <div
-              style="display:flex;align-items:center;gap:12px;background:#1a1f2e;padding:15px;border-radius:12px;box-shadow:inset 3px 3px 6px #141823,inset -3px -3px 6px #222836;transition:all .3s ease-in-out;cursor:pointer">
-              <i class="fas fa-phone-alt" style=color:#ff5722;font-size:1.3rem></i> <a href=tel:+573012852588
-                style=text-decoration:none;color:#fff;font-weight:700>+57 301 2852588</a>
-            </div>
-          </div>
-        </div>
-        <div class=contact-item>
-          <div class=contact-icon>
-            <div class="kchUpy llCXlQ sc-1mehu68-0 sc-241bld-10" data-name=icon-locationpin-complexity-3><svg
-                fill="rgb(226, 201, 110)" height=60 viewBox="0 0 32 32" width=60 xmlns=http://www.w3.org/2000/svg>
-                <path
-                  d="M20.348 20.277a1.055 1.055 0 00-1.148.975v.01a1.055 1.055 0 00.975 1.148h.01c6.806.579 9.681 2.519 9.681 3.2 0 .955-4.714 3.2-13.867 3.2s-13.867-2.245-13.867-3.2c0-.681 2.875-2.621 9.681-3.2a1.07 1.07 0 00.985-1.148v-.01a1.07 1.07 0 00-1.148-.985h-.01C6.266 20.734-.002 22.41-.002 25.61c0 3.667 8.3 5.333 16 5.333s16-1.666 16-5.333c0-3.2-6.268-4.876-11.652-5.333z">
-                </path>
-                <path d="M14.933 13.775V25.6a1.067 1.067 0 102.134 0V13.775a6.398 6.398 0 10-2.133 0z"></path>
-              </svg></div>
-          </div>
-          <h3>Ubicación</h3>
-          <div
-            style="display:flex;flex-direction:column;align-items:center;justify-content:center;background:#1a1f2e;padding:15px 20px;border-radius:10px;box-shadow:inset 3px 3px 6px #141823,inset -3px -3px 6px #222836;transition:all .3s ease-in-out;color:#fff;font-size:1.1rem;text-align:center;width:fit-content;margin:20px auto;cursor:pointer">
-            <p style="margin:5px 0;display:flex;align-items:center;gap:8px;transition:all .3s ease-in-out"><i
-                class="fa-solid fa-location-dot" style=color:#fc0;font-size:1.3rem></i> <span>Barranquilla,
-                Atlántico</span>
-            <p style="margin:5px 0;display:flex;align-items:center;gap:8px;transition:all .3s ease-in-out"><i
-                class="fa-solid fa-globe" style=color:#0cf;font-size:1.3rem></i> <span>Colombia</span>
-          </div>
-        </div>
-        <div class=contact-item>
-          <div class=contact-icon><i class="fa-clock far"></i></div>
-          <h3>Working hours</h3>
-          <div class=box-hours>
-            <div
-              style="display:flex;align-items:center;gap:12px;background:#1a1f2e;padding:15px;border-radius:12px;box-shadow:inset 3px 3px 6px #141823,inset -3px -3px 6px #222836;transition:all .3s ease-in-out;cursor:pointer">
-              <i class="fas fa-door-open" style=color:#4caf50;font-size:1.3rem></i>
-              <p style=margin:0;color:#fff;font-weight:700>Open: 12:00 PM
-            </div>
-            <div
-              style="display:flex;align-items:center;gap:15px;background:#1a1f2e;padding:15px;border-radius:12px;box-shadow:inset 3px 3px 6px #141823,inset -3px -3px 6px #222836;transition:all .3s ease-in-out;cursor:pointer">
-              <i class="fas fa-door-closed" style=color:#ff5722;font-size:1.3rem></i>
-              <p style=margin:0;color:#fff;font-weight:700>Closed: 10:00 PM
-            </div>
-          </div>
-        </div>
+         </div>
       </div>
-      <div class=updates-section>
-        <h2 class=updates-title style=color:#fff>📢 Recibe nuestras últimas actualizaciones</h2>
-        <form id=subscriptionForm class=subscription-form><input id=emailInput placeholder="Enter your email" required
-            class=email-input type=email> <button class=subscribe-button type=submit>Subscribe</button>
-          <div class=error-message id=errorMessage style=color:red;display:none>⚠ Por favor ingrese un correo válido.
-          </div>
-        </form>
+      <div class="updates-section">
+         <h2 class="updates-title" style="color:#fff">📢 Recibe nuestras últimas actualizaciones</h2>
+         <form id="subscriptionForm" class="subscription-form">
+            <input id="emailInput" placeholder="Enter your email" required class="email-input" type="email">
+            <button class="subscribe-button" type="submit">Subscribe</button>
+            <div class="error-message" id="errorMessage" style="color:red;display:none">⚠ Por favor ingrese un correo
+               válido.
+            </div>
+         </form>
       </div>
-      <div class=success-alert id=successAlert>✅ ¡Te has suscrito con éxito!</div>
-      <div class=social-links><a href=./muypronto.html class=social-link target=_blank><i
-            class="fab fa-facebook-f"></i></a> <a href=./muypronto.html class=social-link target=_blank><i
-            class="fab fa-twitter"></i></a> <a href=./muypronto.html class=social-link target=_blank><i
-            class="fab fa-linkedin-in"></i></a> <a href=https://www.instagram.com/leal_asesoriasyseguros/
-          class=social-link target=_blank><i class="fab fa-instagram"></i></a></div>
-      <p class=copyright>© All Rights Reserved. Leal Asesorias & Seguros LTDA</p><a
-        href="https://wa.me/573012852588?text=Hola,%20estoy%20interesado%20en%20sus%20servicios%20de%20seguros"
-        class=whatsapp-bot target=_blank aria-label="Contactar por WhatsApp"><i class="fab fa-whatsapp"></i></a>
-      <div class=chat-icon id=chatIcon onclick=startChat()><img alt=Chatbot src=./assets/icons8-robot-mensaje-48.png>
+
+      <div class="social-links"><a href="./muypronto.html" class="social-link" target="_blank"><i
+               class="fab fa-facebook-f"></i></a> <a href="./muypronto.html" class="social-link" target="_blank"><i
+               class="fab fa-twitter"></i></a> <a href="./muypronto.html" class="social-link" target="_blan" k><i
+               class="fab fa-linkedin-in"></i></a> <a href="https://www.instagram.com/leal_asesoriasyseguros/"
+            class="social-link" target="_blank"><i class="fab fa-instagram"></i></a></div>
+      <p class="copyright">© All Rights Reserved. Leal Asesorias & Seguros LTDA</p>
+      <a href="https://wa.me/573012852588?text=Hola,%20estoy%20interesado%20en%20sus%20servicios%20de%20seguros"
+         class="whatsapp-bot" target="_blank" aria-label="Contactar por WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <div class="chat-icon" id="chatIcon" onclick="startChat()"><img alt="Chatbot"
+            src="./assets/icons8-robot-mensaje-48.png" loading="lazy">
       </div>
-      <div class=chat-container id=chatBot>
-        <div class=chat-header onclick=toggleChat()><i class="fab fa-whatsapp"></i> <span>Asistente Virtual</span></div>
-        <div class=chat-messages id=chatMessages></div>
-        <div class=chat-options id=chatOptions></div><button class=update-chat-btn onclick=updateChat()>Actualizar
-          Chat</button>
+      <div class="chat-container" id="chatBot">
+         <div class="chat-header" onclick="toggleChat()"><i class="fab fa-whatsapp"></i> <span>Asistente Virtual</span>
+         </div>
+         <div class="chat-messages" id="chatMessages"></div>
+         <div class="chat-options" id="chatOptions"></div>
+         <button class="update-chat-btn" onclick="updateChat()">Actualizar Chat
+         </button>
       </div>
-      <script src=./js/main.js></script>
-      <script src=./js/testimonials.js></script>
-      <script src=./js/contact.js></script>
-      <script src=./js/chatbot.js></script>
-      <script src=./js/menu-hamburguersa.js></script>
-      <script src=./js/sectiom-testimonial.js></script>
-      <script>
-        document.querySelectorAll('.service-item').forEach(item => {
-          item.addEventListener('click', () => {
+   </div>
+
+   <!-- 🔹 Scripts -->
+   <script src="./js/main.js" defer></script>
+   <script src="./js/contact.js" defer></script>
+   <script src="./js/chatbot.js" defer></script>
+   <script src="./js/menu-hamburguersa.js" defer></script>
+   <script src="./js/sectiom-logos.js" defer></script>
+
+   <script>
+      document.querySelectorAll('.service-item').forEach(item => {
+         item.addEventListener('click', () => {
             const detail = item.querySelector('.service-detail');
             const isOpen = detail.style.display === 'block';
 
@@ -772,34 +668,35 @@
 
             // Scroll suave al elemento
             if (!isOpen) {
-              item.scrollIntoView({ behavior: 'smooth', block: 'center' });
+               item.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
-          });
-        });
-      </script><!--  -->
-      <script>document.addEventListener("DOMContentLoaded", function () {
-          const nav = document.querySelector("nav");
-          const navLinks = document.querySelectorAll(".nav-links a");
-          const logo = document.querySelector(".logo");
-          const slides = document.querySelectorAll(".slide");
+         });
+      });
+   </script>
+   <script>
+      document.addEventListener("DOMContentLoaded", function () {
+         const nav = document.querySelector("nav");
+         const navLinks = document.querySelectorAll(".nav-links a");
+         const logo = document.querySelector(".logo");
+         const slides = document.querySelectorAll(".slide");
 
-          // Función para determinar el contraste
-          function needsLightText(bgColor) {
+         // Función para determinar el contraste
+         function needsLightText(bgColor) {
             const color = bgColor.replace(/^#/, "");
             const r = parseInt(color.substr(0, 2), 16);
             const g = parseInt(color.substr(2, 2), 16);
             const b = parseInt(color.substr(4, 2), 16);
             const brightness = (r * 299 + g * 587 + b * 114) / 1000;
             return brightness < 128;
-          }
+         }
 
-          function updateNavColors() {
+         function updateNavColors() {
             if (nav.classList.contains("scrolled")) {
-              // Estado scrolled - siempre texto oscuro
-              nav.classList.remove("light-nav", "dark-nav");
-              navLinks.forEach((link) => (link.style.color = "#333"));
-              logo.style.color = "#333";
-              return;
+               // Estado scrolled - siempre texto oscuro
+               nav.classList.remove("light-nav", "dark-nav");
+               navLinks.forEach((link) => (link.style.color = "#333"));
+               logo.style.color = "#333";
+               return;
             }
 
             const currentSlide = document.querySelector(".slide.active");
@@ -809,131 +706,174 @@
             const bgColor = style.backgroundColor;
 
             if (needsLightText(rgbToHex(bgColor))) {
-              // Fondo oscuro - texto claro
-              nav.classList.add("dark-nav");
-              nav.classList.remove("light-nav");
+               // Fondo oscuro - texto claro
+               nav.classList.add("dark-nav");
+               nav.classList.remove("light-nav");
             } else {
-              // Fondo claro - texto oscuro
-              nav.classList.add("light-nav");
-              nav.classList.remove("dark-nav");
+               // Fondo claro - texto oscuro
+               nav.classList.add("light-nav");
+               nav.classList.remove("dark-nav");
             }
-          }
+         }
 
-          // Conversor RGB a HEX
-          function rgbToHex(rgb) {
+         // Conversor RGB a HEX
+         function rgbToHex(rgb) {
             const sep = rgb.indexOf(",") > -1 ? "," : " ";
             const parts = rgb.substr(4).split(")")[0].split(sep);
             let r = (+parts[0]).toString(16),
-              g = (+parts[1]).toString(16),
-              b = (+parts[2]).toString(16);
+               g = (+parts[1]).toString(16),
+               b = (+parts[2]).toString(16);
 
             if (r.length == 1) r = "0" + r;
             if (g.length == 1) g = "0" + g;
             if (b.length == 1) b = "0" + b;
 
             return "#" + r + g + b;
-          }
+         }
 
-          // Observador de intersección
-          const observer = new IntersectionObserver(
+         // Observador de intersección
+         const observer = new IntersectionObserver(
             (entries) => {
-              entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                  slides.forEach((slide) => slide.classList.remove("active"));
-                  entry.target.classList.add("active");
-                  updateNavColors();
-                }
-              });
+               entries.forEach((entry) => {
+                  if (entry.isIntersecting) {
+                     slides.forEach((slide) => slide.classList.remove("active"));
+                     entry.target.classList.add("active");
+                     updateNavColors();
+                  }
+               });
             },
             { threshold: 0.5 }
-          );
+         );
 
-          slides.forEach((slide) => observer.observe(slide));
+         slides.forEach((slide) => observer.observe(slide));
 
-          // Evento de scroll
-          window.addEventListener("scroll", () => {
+         // Evento de scroll
+         window.addEventListener("scroll", () => {
             nav.classList.toggle("scrolled", window.scrollY > 50);
             updateNavColors();
-          });
+         });
 
-          // Inicialización
-          updateNavColors();
-        });
-      </script>
-      <script>
-        // JavaScript para el slider de empresas
-        const companySliderTrack = document.querySelector('.company-slider-track');
-        const companyPrevBtn = document.querySelector('.company-slider-btn.prev');
-        const companyNextBtn = document.querySelector('.company-slider-btn.next');
-        const companyOriginalSlides = document.querySelectorAll('.company-slide');
-        const companySlideCount = companyOriginalSlides.length;
+         // Inicialización
+         updateNavColors();
+      });
+   </script>
+   <script>
+      document.addEventListener("DOMContentLoaded", function () {
+         // Selecciona todos los elementos de la lista de servicios
+         const serviceItems = document.querySelectorAll(".service-items");
 
-        // Clonar slides para efecto infinito
-        companyOriginalSlides.forEach(slide => {
-          const clone = slide.cloneNode(true);
-          companySliderTrack.appendChild(clone);
-        });
+         serviceItems.forEach(item => {
+            item.addEventListener("click", function () {
+               // Encuentra el div con la clase "service-details" dentro del ítem seleccionado
+               const details = this.querySelector(".service-details");
 
-        // Efectos hover corregidos
-        document.querySelectorAll('.company-icon').forEach(icon => {
-          icon.addEventListener('mouseover', () => {
-            icon.style.filter = 'grayscale(0)'; // Solo cambia el filtro
-          });
+               // Cierra todas las demás secciones antes de abrir la actual
+               document.querySelectorAll(".service-details").forEach(detail => {
+                  if (detail !== details) {
+                     detail.style.display = "none"; // Oculta las demás
+                  }
+               });
 
-          icon.addEventListener('mouseout', () => {
-            icon.style.filter = 'grayscale(100%)';
-          });
-        });
+               // Alterna la visibilidad del detalle de la sección seleccionada
+               details.style.display = details.style.display === "block" ? "none" : "block";
 
-        // Lógica del slider
-        let companyCurrentPosition = 0;
-        let companySlideWidth = companyOriginalSlides[0].offsetWidth;
+               // Desplaza suavemente hasta el elemento si se abre
+               if (details.style.display === "block") {
+                  details.scrollIntoView({ behavior: "smooth", block: "center" });
+               }
+            });
+         });
+      });
+   </script>
+   <!-- Flecha -->
+   <script>
+      function createWhatsappArrow(startButton) {
+         // Eliminar cualquier flecha anterior
+         const existingArrow = document.querySelector('.arrow-pointer');
+         if (existingArrow) existingArrow.remove();
 
-        function updateCompanyPosition() {
-          companySliderTrack.style.transform = `translateX(${companyCurrentPosition}px)`;
-        }
+         // Crear la flecha
+         const arrow = document.createElement('div');
+         arrow.innerHTML = '➤';
+         arrow.classList.add('arrow-pointer');
+         document.body.appendChild(arrow);
 
-        function nextCompanySlide() {
-          companyCurrentPosition -= companySlideWidth;
-          updateCompanyPosition();
+         // 📌 Posición inicial en el botón "GET STARTED"
+         const startRect = startButton.getBoundingClientRect();
+         const startX = startRect.left + window.scrollX + (startRect.width / 2);
+         const startY = startRect.top + window.scrollY + (startRect.height / 2);
 
-          if (companyCurrentPosition <= -companySlideWidth * companySlideCount) {
-            setTimeout(() => {
-              companySliderTrack.style.transition = 'none';
-              companyCurrentPosition = 0;
-              updateCompanyPosition();
-              void companySliderTrack.offsetWidth;
-              companySliderTrack.style.transition = 'transform 0.5s ease';
-            }, 500);
-          }
-        }
+         arrow.style.left = `${startX}px`;
+         arrow.style.top = `${startY}px`;
 
-        function prevCompanySlide() {
-          companyCurrentPosition += companySlideWidth;
-          updateCompanyPosition();
+         // 📌 Posición final en el botón de WhatsApp (AJUSTADO para no bajar demasiado)
+         const whatsappBtn = document.querySelector('.whatsapp-bot');
+         const whatsappRect = whatsappBtn.getBoundingClientRect();
 
-          if (companyCurrentPosition > 0) {
-            setTimeout(() => {
-              companySliderTrack.style.transition = 'none';
-              companyCurrentPosition = -companySlideWidth * (companySlideCount - 1);
-              updateCompanyPosition();
-              void companySliderTrack.offsetWidth;
-              companySliderTrack.style.transition = 'transform 0.5s ease';
-            }, 500);
-          }
-        }
+         const endX = whatsappRect.left + window.scrollX - 50; // Se mueve un poco a la izquierda
+         const endY = whatsappRect.top + window.scrollY - 10; // Se detiene justo arriba del botón
 
-        companyNextBtn.addEventListener('click', nextCompanySlide);
-        companyPrevBtn.addEventListener('click', prevCompanySlide);
+         // 📌 Mover la flecha hacia WhatsApp
+         setTimeout(() => {
+            arrow.style.left = `${endX}px`;
+            arrow.style.top = `${endY}px`;
+            arrow.style.animation = "bounce 1.5s infinite"; // Rebote al llegar
+         }, 500);
 
-        // Ajuste responsive
-        window.addEventListener('resize', () => {
-          companySlideWidth = companyOriginalSlides[0].offsetWidth;
-          companyCurrentPosition = 0;
-          updateCompanyPosition();
-        });
-      </script>
+         // 📌 Scroll hasta la zona de WhatsApp sin pasarse
+         setTimeout(() => {
+            whatsappBtn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+         }, 800);
+      }
 
-  </body>
+      // Asignar evento al botón GET STARTED
+      document.querySelector('.btn').addEventListener('click', function () {
+         createWhatsappArrow(this);
+      });
 
-  </html>
+      // Forzar posición fija en cada actualización del DOM
+      // Ejecutar en cada cambio y resize
+      window.addEventListener('resize', enforceFixedPosition);
+      window.addEventListener('scroll', enforceFixedPosition);
+      document.addEventListener('DOMContentLoaded', enforceFixedPosition);
+      setInterval(enforceFixedPosition, 1000); // Refuerzo cada segundo
+
+      // Eliminar transiciones que puedan interferir
+      document.querySelectorAll('.whatsapp-bot, .chat-icon').forEach(el => {
+         el.style.transition = 'none !important';
+      });
+
+      // Función para mantener posiciones fijas
+      const enforceFixedPosition = () => {
+         const elements = [
+            { selector: '.whatsapp-bot', bottom: '100px', right: '30px' },
+            { selector: '.chat-icon', bottom: '30px', right: '30px' },
+            { selector: '.chat-container', bottom: '160px', right: '30px' }
+         ];
+
+         elements.forEach(({ selector, bottom, right }) => {
+            const element = document.querySelector(selector);
+            if (element) {
+               element.style.bottom = bottom;
+               element.style.right = right;
+               element.style.transform = 'none';
+            }
+         });
+      };
+
+      // Ejecutar en cada evento relevante
+      ['load', 'scroll', 'resize', 'DOMContentLoaded'].forEach(event => {
+         window.addEventListener(event, enforceFixedPosition);
+      });
+
+      // Refuerzo cada 500ms
+      setInterval(enforceFixedPosition, 500);
+
+      // Eliminar transiciones conflictivas
+      document.querySelectorAll('.whatsapp-bot, .chat-icon, .chat-container').forEach(el => {
+         el.style.transition = 'none !important';
+      });
+   </script>
+</body>
+
+</html>

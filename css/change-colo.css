@@ -1,1 +1,39 @@
-nav{--text-color:#333;color:var(--text-color);transition:all 0.4s ease}.dark-nav{--text-color:#fff !important}.light-nav{--text-color:#333 !important}.nav-links a,.logo{color:var(--text-color)}nav.scrolled{background:rgb(255 255 255 / .98)!important}nav.scrolled .nav-links a,nav.scrolled .logo{color:#333!important}.slide:nth-child(1){background:#1a1a1a}.slide:nth-child(2){background:#f9f9f9}.slide:nth-child(3){background:#2d2d2d}
+nav {
+    --text-color: #333;
+    color: var(--text-color);
+    transition: all 0.4s ease
+}
+
+.dark-nav {
+    --text-color: #fff !important
+}
+
+.light-nav {
+    --text-color: #333 !important
+}
+
+.nav-links a,
+.logo {
+    color: var(--text-color)
+}
+
+nav.scrolled {
+    background: rgb(255 255 255 / .98) !important
+}
+
+nav.scrolled .nav-links a,
+nav.scrolled .logo {
+    color: #333 !important
+}
+
+.slide:nth-child(1) {
+    background: #1a1a1a
+}
+
+.slide:nth-child(2) {
+    background: #f9f9f9
+}
+
+.slide:nth-child(3) {
+    background: #2d2d2d
+}

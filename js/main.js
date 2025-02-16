@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
       logo.src = "./assets/Logo.png";
     } else {
       nav.classList.remove("scrolled");
-      logo.src = "./assets/Leal_Branding White.png";
+      logo.src = "./assets/Leal_Branding_White.png";
     }
   });
   let currentSlide = 0;
@@ -43,5 +43,62 @@ document.addEventListener("DOMContentLoaded", function () {
         showSlide(currentSlide - 1);
       }
     }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const links = document.querySelectorAll('a[href^="#"]');
+
+  links.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const targetId = this.getAttribute("href");
+      const targetElement = document.querySelector(targetId);
+
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop - 70, // Ajusta este valor según el tamaño del navbar
+          behavior: "smooth",
+        });
+      }
+    });
+  });
+});
+
+/* APARECIENDO */
+
+document.addEventListener("DOMContentLoaded", function () {
+  const elements = document.querySelectorAll(".hidden-element");
+
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target); // Para que la animación ocurra solo una vez
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  elements.forEach((element) => observer.observe(element));
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("a[href^='#']").forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute("href").substring(1);
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop - 50, // Ajusta según tu navbar fija
+          behavior: "smooth",
+        });
+      }
+    });
   });
 });
