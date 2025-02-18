@@ -1,7 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
 .whatsapp-bot {
     position: fixed !important;
-    bottom: 80px !important;
-    right: 20px !important;
+    bottom: 160px !important;
+    right: 30px !important;
     z-index: 10000 !important;
     background-color: #25d366;
     border-radius: 50%;
@@ -34,8 +35,6 @@
     z-index: 9999 !important;
     background-color: #fff0;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -47,17 +46,119 @@
 }
 
 .chat-icon img {
-    width: 48px;
-    height: 48px;
     transition: transform 0.3s ease
 }
 
 .chat-icon:hover img {
+
     transform: scale(1.1)
+}
+
+.chat-icon::after {
+    content: "¡Hola, Soy Joha!";
+    position: absolute;
+    top: -50px;
+    left: -20px;
+    transform: translateX(-100%);
+    background: #fff;
+    color: #25d366;
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: 3px solid #25d366;
+    font-family: 'Comic Neue', cursive;
+    font-weight: 700;
+    font-size: 16px;
+    box-shadow: 4px 4px 0 #00000020;
+    opacity: 0;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    white-space: nowrap;
+    animation: comicBounce 0.8s ease infinite alternate;
+}
+
+/* Añadir el "pensamiento" con pequeños círculos */
+.chat-icon::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: -10px;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border: 2px solid #25d366;
+    border-radius: 50%;
+    box-shadow: 2px 2px 0 #00000020;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.chat-icon:hover::after,
+.chat-icon:hover::before {
+    opacity: 1;
+}
+
+/* Agregar círculos de pensamiento */
+.chat-icon:hover::before {
+    content: "";
+    width: 14px;
+    height: 14px;
+    top: -25px;
+    left: -15px;
+}
+
+.chat-icon:hover::after {
+    transform: translateX(-100%) translateY(-10px);
+}
+
+/* Animación de rebote */
+@keyframes comicBounce {
+    from {
+        transform: translateX(-100%) translateY(-10px);
+    }
+    to {
+        transform: translateX(-100%) translateY(-20px);
+    }
+}
+
+
+/* Img move */
+
+.chat-icon img {
+    animation: chatbotBreath 2s infinite ease-in-out, chatbotFloat 3s infinite ease-in-out;
+    transition: transform 0.3s;
+}
+
+/* Efecto al hacer hover para que se intensifique */
+.chat-icon:hover img {
+    animation: chatbotBreath 1s infinite ease-in-out, chatbotFloat 1.5s infinite ease-in-out;
 }
 
 .chat-container:not(.active)+.chat-icon {
     display: flex
+}
+
+@keyframes chatbotBreath {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes chatbotFloat {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 
 .chat-container {
@@ -279,7 +380,6 @@ body > *:not(.whatsapp-bot):not(.chat-icon):not(.chat-container) {
 .copy-feedback {
     position: fixed;
     bottom: 20px;
-    left: 50%;
     transform: translateX(-50%);
     background: rgb(0 0 0 / .8);
     color: #fff;
@@ -310,7 +410,7 @@ body > *:not(.whatsapp-bot):not(.chat-icon):not(.chat-container) {
 .copy-feedback {
     position: fixed;
     bottom: 50px;
-    left: 50%;
+    left: 40%;
     transform: translateX(-50%);
     background: #fff9e6;
     color: #333;
@@ -447,5 +547,43 @@ body > *:not(.whatsapp-bot):not(.chat-icon):not(.chat-container) {
     100% {
         transform: translate(-50%, 100%);
         opacity: 0
+    }
+}
+@media (max-width: 480px) {
+    .copy-feedback {
+        width: 90%; /* Ocupa casi toda la pantalla */
+        left: 10%;
+        max-width: 320px;
+        transform: translateX(-50%);
+        font-size: 14px; /* Tamaño de fuente más legible */
+        padding: 20px;
+        z-index: 10000; /* Asegurar que siempre esté adelante */
+    }
+
+    .copy-feedback::after {
+        bottom: -15px;
+        left: 50%;
+        margin-left: -10px;
+        border-width: 8px;
+        border-color: #ff6b6b transparent transparent transparent;
+    }
+
+    .open-whatsapp {
+        font-size: 14px; /* Ajusta el botón */
+        padding: 10px;
+    }
+}
+
+/* Mostrar el globo automáticamente después de 3 segundos */
+@keyframes showComicBalloon {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+    .chat-icon::after,
+    .chat-icon::before {
+        opacity: 1;
+        animation: showComicBalloon 1s ease forwards;
     }
 }

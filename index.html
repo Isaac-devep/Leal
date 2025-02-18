@@ -74,6 +74,19 @@
             transform: translateY(-10px);
          }
       }
+
+      /* Estilos para dispositivos móviles */
+      @media (max-width: 768px) {
+         .contact-grid {
+            display: block !important;
+            /* Asegura que se apilen */
+         }
+
+         .contact-item {
+            margin-bottom: 30px;
+            /* Espaciado entre elementos */
+         }
+      }
    </style>
    <script type="application/ld+json">
    {
@@ -150,7 +163,6 @@
       <div class="slider">
          <div class="dark-slide slide"
             style="background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(assets/imagen2.jpeg);background-size:cover;background-position:center;background-repeat:no-repeat">
-            <div class="first-slide-video video-container"></div>
             <div class="slide-content">
                <div class="slide-number">01 / 03</div>
                <h1 class="hidden-element">Leal Asesorias & Seguros LTDA - Expertos en Gestión de Riesgos</h1>
@@ -541,7 +553,6 @@
       </div>
    </section>
 
-
    <div id="contact" class="contact-section hidden-element"
       style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 50px 20px; background: #1a1f2e;">
       <h2 class="contact-title" style="color:#fff;">Contáctanos</h2>
@@ -634,8 +645,8 @@
       <p class="copyright">© All Rights Reserved. Leal Asesorias & Seguros LTDA</p>
       <a href="https://wa.me/573012852588?text=Hola,%20estoy%20interesado%20en%20sus%20servicios%20de%20seguros"
          class="whatsapp-bot" target="_blank" aria-label="Contactar por WhatsApp"><i class="fab fa-whatsapp"></i></a>
-      <div class="chat-icon" id="chatIcon" onclick="startChat()"><img alt="Chatbot"
-            src="./assets/icons8-robot-mensaje-48.png" loading="lazy">
+      <div class="chat-icon" id="chatIcon" onclick="startChat()" style="position: relative;"><img alt="Chatbot" src="./assets/gif-Photoroom.png"
+            loading="lazy" width="80px">
       </div>
       <div class="chat-container" id="chatBot">
          <div class="chat-header" onclick="toggleChat()"><i class="fab fa-whatsapp"></i> <span>Asistente Virtual</span>

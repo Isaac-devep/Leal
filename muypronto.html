@@ -1,4 +1,246 @@
-<!doctypehtml><html lang=es><meta charset=UTF-8><meta content="width=device-width,initial-scale=1"name=viewport><title>Próximamente - Coming Soon</title><link href=/vite.svg rel=icon type=image/svg+xml><style>:root{--primary:#2563eb;--secondary:#7c3aed;--background:#0f172a;--text:#f8fafc;--accent:#22d3ee;font-family:Inter,system-ui,Avenir,Helvetica,Arial,sans-serif;line-height:1.5;font-weight:400;color:var(--text);background-color:var(--background);font-synthesis:none;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}*{margin:0;padding:0;box-sizing:border-box}body{min-height:100vh;display:flex;justify-content:center;align-items:center;overflow:hidden}.container{width:100%;max-width:1200px;padding:2rem;position:relative;z-index:1}.content{text-align:center;animation:fadeIn 1s ease-out}.title{font-size:clamp(2rem,5vw,4rem);font-weight:700;margin-bottom:2rem;background:linear-gradient(135deg,var(--primary),var(--secondary));-webkit-background-clip:text;background-clip:text;color:transparent;animation:titleAnimation 2s ease-in-out infinite alternate}.message{font-size:1.25rem;color:var(--text);opacity:.8;margin-top:2rem}.countdown{display:flex;justify-content:center;gap:2rem;margin:3rem 0}.countdown-item{display:flex;flex-direction:column;align-items:center;min-width:100px;padding:1rem;background:rgba(255,255,255,.05);border-radius:12px;backdrop-filter:blur(10px);transition:transform .3s ease}.countdown-item:hover{transform:translateY(-5px)}.countdown-item span{font-size:2.5rem;font-weight:700;color:var(--accent)}.countdown-item .label{font-size:.875rem;color:var(--text);opacity:.7}.shapes{position:fixed;top:0;left:0;width:100%;height:100%;overflow:hidden;z-index:-1}.shape{position:absolute;border-radius:50%;filter:blur(40px);opacity:.2;animation:float 20s infinite}.shape-1{width:300px;height:300px;background:var(--primary);top:-150px;left:-150px;animation-delay:-5s}.shape-2{width:400px;height:400px;background:var(--secondary);bottom:-200px;right:-200px;animation-delay:-10s}.shape-3{width:200px;height:200px;background:var(--accent);top:50%;left:50%;transform:translate(-50%,-50%);animation-delay:-15s}@keyframes titleAnimation{0%{opacity:.8;transform:scale(1)}100%{opacity:1;transform:scale(1.05)}}@keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}@keyframes float{0%,100%{transform:translate(0,0)}25%{transform:translate(100px,100px)}50%{transform:translate(0,200px)}75%{transform:translate(-100px,100px)}}@media (max-width:768px){.countdown{gap:1rem;flex-wrap:wrap}.countdown-item{min-width:80px;padding:.75rem}.countdown-item span{font-size:1.75rem}.message{font-size:1rem}}@media (prefers-reduced-motion){.countdown-item,.shape,.title{animation:none;transition:none}}</style><main class=container id=app><div class=content><h1 class=title>Muy pronto estaremos aquí</h1><div class=countdown><div class=countdown-item><span id=days>00</span> <span class=label>Días</span></div><div class=countdown-item><span id=hours>00</span> <span class=label>Horas</span></div><div class=countdown-item><span id=minutes>00</span> <span class=label>Minutos</span></div><div class=countdown-item><span id=seconds>00</span> <span class=label>Segundos</span></div></div><p class=message>Estamos preparando algo increíble para ti</div><div class=shapes><div class="shape shape-1"></div><div class="shape shape-2"></div><div class="shape shape-3"></div></div></main><script src=/main.js type=module></script><script>// Fecha objetivo (30 días desde ahora)
+<!doctypehtml>
+    <html lang=es>
+    <meta charset=UTF-8>
+    <meta content="width=device-width,initial-scale=1" name=viewport>
+    <title>Próximamente - Coming Soon</title>
+    <link href=/vite.svg rel=icon type=image/svg+xml>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #7c3aed;
+            --background: #0f172a;
+            --text: #f8fafc;
+            --accent: #22d3ee;
+            font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+            line-height: 1.5;
+            font-weight: 400;
+            color: var(--text);
+            background-color: var(--background);
+            font-synthesis: none;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            padding: 2rem;
+            position: relative;
+            z-index: 1
+        }
+
+        .content {
+            text-align: center;
+            animation: fadeIn 1s ease-out
+        }
+
+        .title {
+            font-size: clamp(2rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: titleAnimation 2s ease-in-out infinite alternate
+        }
+
+        .message {
+            font-size: 1.25rem;
+            color: var(--text);
+            opacity: .8;
+            margin-top: 2rem
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 3rem 0
+        }
+
+        .countdown-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 100px;
+            padding: 1rem;
+            background: rgba(255, 255, 255, .05);
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            transition: transform .3s ease
+        }
+
+        .countdown-item:hover {
+            transform: translateY(-5px)
+        }
+
+        .countdown-item span {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent)
+        }
+
+        .countdown-item .label {
+            font-size: .875rem;
+            color: var(--text);
+            opacity: .7
+        }
+
+        .shapes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1
+        }
+
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(40px);
+            opacity: .2;
+            animation: float 20s infinite
+        }
+
+        .shape-1 {
+            width: 300px;
+            height: 300px;
+            background: var(--primary);
+            top: -150px;
+            left: -150px;
+            animation-delay: -5s
+        }
+
+        .shape-2 {
+            width: 400px;
+            height: 400px;
+            background: var(--secondary);
+            bottom: -200px;
+            right: -200px;
+            animation-delay: -10s
+        }
+
+        .shape-3 {
+            width: 200px;
+            height: 200px;
+            background: var(--accent);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation-delay: -15s
+        }
+
+        @keyframes titleAnimation {
+            0% {
+                opacity: .8;
+                transform: scale(1)
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1.05)
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translate(0, 0)
+            }
+
+            25% {
+                transform: translate(100px, 100px)
+            }
+
+            50% {
+                transform: translate(0, 200px)
+            }
+
+            75% {
+                transform: translate(-100px, 100px)
+            }
+        }
+
+        @media (max-width:768px) {
+            .countdown {
+                gap: 1rem;
+                flex-wrap: wrap
+            }
+
+            .countdown-item {
+                min-width: 80px;
+                padding: .75rem
+            }
+
+            .countdown-item span {
+                font-size: 1.75rem
+            }
+
+            .message {
+                font-size: 1rem
+            }
+        }
+
+        @media (prefers-reduced-motion) {
+
+            .countdown-item,
+            .shape,
+            .title {
+                animation: none;
+                transition: none
+            }
+        }
+    </style>
+    <main class=container id=app>
+        <div class=content>
+            <h1 class=title>Muy pronto estaremos aquí</h1>
+            <div class=countdown>
+                <div class=countdown-item><span id=days>00</span> <span class=label>Días</span></div>
+                <div class=countdown-item><span id=hours>00</span> <span class=label>Horas</span></div>
+                <div class=countdown-item><span id=minutes>00</span> <span class=label>Minutos</span></div>
+                <div class=countdown-item><span id=seconds>00</span> <span class=label>Segundos</span></div>
+            </div>
+            <p class=message>Estamos preparando algo increíble para ti
+        </div>
+        <div class=shapes>
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+    </main>
+    <script src=/main.js type=module></script>
+    <script>// Fecha objetivo (30 días desde ahora)
         const targetDate = new Date();
         targetDate.setDate(targetDate.getDate() + 30);
 
